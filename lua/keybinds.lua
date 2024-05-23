@@ -29,3 +29,30 @@ vim.api.nvim_set_keymap('n', '<C-Right>', '<C-w>l', { noremap = true, silent = t
 
 -- Set key to to toggle neotree
 vim.api.nvim_set_keymap('n', '<C-b>', ':Neotree toggle<CR>', { noremap = true, silent = true })
+
+-- Function for disabling keymaps in neo-tree
+function DisableNeoTreeKeymaps()
+    local opts = { noremap = true, silent = true }
+    local buffer = vim.api.nvim_get_current_buf()
+    vim.api.nvim_buf_set_keymap(0, 'n', 'j', '<Nop>', opts)
+    vim.api.nvim_buf_set_keymap(0, 'n', 'k', '<Nop>', opts)
+    vim.api.nvim_buf_set_keymap(0, 'n', 'l', '<Nop>', opts)
+    vim.api.nvim_buf_set_keymap(0, 'n', 'ö', '<Nop>', opts)
+    vim.api.nvim_buf_set_keymap(0, 'n', 'h', '<Nop>', opts)
+end
+
+-- Auto commmand for disabling keymaps in neo-tree
+vim.cmd [[
+    augroup DisableNeoTreeKeymaps
+        autocmd!
+        autocmd FileType neo-tree lua DisableNeoTreeKeymaps()
+    augroup END
+]]
+
+-- Stay in visual mode after indenting
+vim.api.nvim_set_keymap('v', '<', '<gv', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', '>', '>gv', { noremap = true, silent = true })
+
+-- Stay in visual block mode after indenting
+vim.api.nvim_set_keymap('x', '<', '<gv', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('x', '>', '>gv', { noremap = true, silent = true })
