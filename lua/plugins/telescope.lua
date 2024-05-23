@@ -6,5 +6,36 @@ return {
         local builtin = require("telescope.builtin")
         vim.keymap.set('n', '<C-f>', builtin.find_files, {})
         vim.keymap.set('n', '<C-g>', builtin.live_grep, {})
+
+        local actions = require('telescope.actions')
+        require('telescope').setup{
+            defaults = {
+                file_ignore_patterns = {},
+                vimgrep_arguments = {
+                    'rg',
+                    '--color=never',
+                    '--no-heading',
+                    '--with-filename',
+                    '--line-number',
+                    '--column',
+                    '--smart-case',
+                    '--hidden',
+                    '--glob', '!.git/'
+                },
+                mappings = {
+                    i = {
+                        ["<Esc>"] = actions.close
+                    },
+                    n = {
+                        ["<Esc>"] = actions.close
+                    }
+                }
+            },
+            pickers = {
+                find_files = {
+                    find_command = { 'rg', '--files', '--hidden', '--glob', '!.git/' }
+                }
+            }
+        }
     end
 }
