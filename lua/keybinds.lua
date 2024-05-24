@@ -33,7 +33,6 @@ vim.api.nvim_set_keymap('n', '<C-b>', ':Neotree toggle<CR>', { noremap = true, s
 -- Function for disabling keymaps in neo-tree
 function DisableNeoTreeKeymaps()
     local opts = { noremap = true, silent = true }
-    local buffer = vim.api.nvim_get_current_buf()
     vim.api.nvim_buf_set_keymap(0, 'n', 'j', '<Nop>', opts)
     vim.api.nvim_buf_set_keymap(0, 'n', 'k', '<Nop>', opts)
     vim.api.nvim_buf_set_keymap(0, 'n', 'l', '<Nop>', opts)
@@ -59,12 +58,11 @@ vim.api.nvim_set_keymap('x', '>', '>gv', { noremap = true, silent = true })
 
 -- Keybindings for neogit
 vim.api.nvim_set_keymap('n', '<leader>g', ':Neogit<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>gd', ':DiffviewOpen<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>fd', ':DiffviewOpen<CR>', { noremap = true, silent = true })
 
 -- Function for setting diffview keymaps
 function SetDiffviewKeymaps()
     local opts = { noremap = true, silent = true }
-    local buffer = vim.api.nvim_get_current_buf()
     vim.api.nvim_buf_set_keymap(0, 'n', '<C-q>', ':DiffviewClose<CR>', opts)
 end
 

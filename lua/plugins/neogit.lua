@@ -7,6 +7,7 @@ return {
     },
     config = function()
         require("diffview").setup()
+        require("telescope").setup()
         local configs = require("neogit")
         configs.setup({
             integrations = {

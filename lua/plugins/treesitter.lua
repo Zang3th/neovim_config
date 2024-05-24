@@ -1,4 +1,4 @@
-return { 
+return {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
     config = function()
@@ -7,7 +7,7 @@ return {
             ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "markdown", "cpp", "html" },
             sync_install = false,
             highlight = { enable = true },
-            indent = { enable = true }  
+            indent = { enable = true }
         })
     end
-} 
+}
