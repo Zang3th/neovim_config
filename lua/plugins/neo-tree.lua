@@ -9,12 +9,15 @@ return {
     config = function()
         local configs = require("neo-tree")
         configs.setup({
+            enable_git_status = true,
+            enable_diagnostics = true,
             filesystem = {
                 filtered_items = {
                     visible = true,
                     hide_dotfiles = false,
-                    hide_gitignored = false
-                }
+                    hide_gitignored = false,
+                    use_libuv_file_watcher = true,
+                },
             },
             default_component_configs = {
                 icon = {
@@ -32,17 +35,17 @@ return {
                 git_status = {
                     symbols = {
                         -- Change type
-                        added     = "✚",
-                        modified  = "",
-                        deleted   = "✖",
-                        renamed   = "",
+                        added = "✚",
+                        modified = "",
+                        deleted = "✖",
+                        renamed = "",
                         -- Status type
                         untracked = "★",
-                        ignored   = "◌",
-                        unstaged  = "✗",
-                        staged    = "✓",
-                        conflict  = "",
-                    }
+                        ignored = "◌",
+                        unstaged = "✗",
+                        staged = "✓",
+                        conflict = "",
+                    },
                 },
                 window = {
                     position = "left",
@@ -50,15 +53,16 @@ return {
                     mapping_options = {
                         noremap = true,
                         nowait = true,
-                    }
-                }
-            }
+                    },
+                },
+            },
         })
-        vim.cmd [[
+        vim.cmd([[
             highlight NeoTreeGitAdded guifg=#b8bb26
             highlight NeoTreeGitModified guifg=#fe8019
             highlight NeoTreeGitDeleted guifg=#cc241d
             highlight NeoTreeGitUntracked guifg=#b8bb26
-        ]]
-    end
+            highlight NeoTreeGitIgnored guifg=#7c6f64
+        ]])
+    end,
 }

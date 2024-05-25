@@ -7,7 +7,7 @@ return {
             ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "markdown", "cpp", "html", "glsl", "latex" },
             sync_install = false,
             highlight = { enable = true },
-            indent = { enable = true }
+            indent = { enable = true },
         })
-    end
+    end,
 }

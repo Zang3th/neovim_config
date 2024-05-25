@@ -3,30 +3,38 @@ return {
         "williamboman/mason.nvim",
         config = function()
             require("mason").setup()
-        end
+        end,
     },
     {
         "williamboman/mason-lspconfig.nvim",
         config = function()
             require("mason-lspconfig").setup({
-                ensure_installed = { "lua_ls", "clangd", "cmake", "autotools_ls", "glsl_analyzer", "texlab", "marksman" }
+                ensure_installed = {
+                    "lua_ls",
+                    "clangd",
+                    "cmake",
+                    "autotools_ls",
+                    "glsl_analyzer",
+                    "texlab",
+                    "marksman",
+                },
             })
-        end
+        end,
     },
     {
         "neovim/nvim-lspconfig",
         config = function()
             local lspconfig = require("lspconfig")
-            lspconfig.lua_ls.setup( {} )
-            lspconfig.clangd.setup( {} )
-            lspconfig.cmake.setup( {} )
-            lspconfig.autotools_ls.setup( {} )
-            lspconfig.glsl_analyzer.setup( {} )
-            lspconfig.texlab.setup( {} )
-            lspconfig.marksman.setup( {} )
+            lspconfig.lua_ls.setup({})
+            lspconfig.clangd.setup({})
+            lspconfig.cmake.setup({})
+            lspconfig.autotools_ls.setup({})
+            lspconfig.glsl_analyzer.setup({})
+            lspconfig.texlab.setup({})
+            lspconfig.marksman.setup({})
 
             local keymaps = require("keymaps")
             keymaps.lsp_keymaps()
-        end
-    }
+        end,
+    },
 }
