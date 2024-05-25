@@ -5,6 +5,7 @@ return {
         null_ls.setup({
             sources = {
                 null_ls.builtins.formatting.stylua,
+                -- TODO: Add linting and formatting for cpp
             },
         })
 
