@@ -3,7 +3,7 @@ return {
     priority = 999,
     opts = ...,
     config = function()
-        vim.o.background = "dark" -- or "light" for light mode       
+        vim.o.background = "dark"
         vim.cmd([[colorscheme gruvbox]])
     end
 }

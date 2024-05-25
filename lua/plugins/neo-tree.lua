@@ -58,7 +58,6 @@ return {
             highlight NeoTreeGitAdded guifg=#b8bb26
             highlight NeoTreeGitModified guifg=#fe8019
             highlight NeoTreeGitDeleted guifg=#cc241d
-            highlight NeoTreeGitRenamed guifg=#a89984
             highlight NeoTreeGitUntracked guifg=#b8bb26
         ]]
     end
