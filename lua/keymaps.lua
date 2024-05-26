@@ -3,7 +3,7 @@ vim.api.nvim_set_keymap("n", "<leader>sh", ":split<CR>", { noremap = true, silen
 vim.api.nvim_set_keymap("n", "<leader>sv", ":vsplit<CR>", { noremap = true, silent = true })
 
 -- Set key to to toggle neotree
-vim.api.nvim_set_keymap("n", "<C-b>", ":Neotree toggle<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-b>", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
 
 -- Keybindings for neogit
 vim.api.nvim_set_keymap("n", "<leader>g", ":Neogit<CR>", { noremap = true, silent = true })
