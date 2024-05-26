@@ -2,11 +2,11 @@
 vim.api.nvim_set_keymap("n", "<leader>sh", ":split<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>sv", ":vsplit<CR>", { noremap = true, silent = true })
 
--- Set key to to toggle neotree
+-- Set key to to toggle nvimtree
 vim.api.nvim_set_keymap("n", "<C-b>", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
 
 -- Keybindings for neogit
-vim.api.nvim_set_keymap("n", "<leader>g", ":Neogit<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>gg", ":Neogit<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>fd", ":DiffviewOpen<CR>", { noremap = true, silent = true })
 
 -- Open lazy
@@ -17,8 +17,10 @@ local M = {}
 -- Keybindings for telescope
 function M.telescope_keymaps()
 	local builtin = require("telescope.builtin")
-	vim.keymap.set("n", "<C-f>", builtin.find_files, {})
-	vim.keymap.set("n", "<C-g>", builtin.live_grep, {})
+	vim.keymap.set("n", "ff", builtin.find_files, {})
+	vim.keymap.set("n", "fg", builtin.live_grep, {})
+	vim.keymap.set("n", "fs", builtin.grep_string, {})
+	vim.keymap.set("n", "ft", "<cmd>ToDoTelescope<CR>", {})
 end
 
 -- Keybindings for LSP
@@ -32,7 +34,7 @@ end
 
 -- Keybinding for none-ls
 function M.none_ls_keymaps()
-	vim.keymap.set("n", "<leader>ff", vim.lsp.buf.format, {})
+	vim.keymap.set("n", "<C-f>", vim.lsp.buf.format, {})
 end
 
 -- Function for setting diffview keymaps
@@ -46,24 +48,6 @@ vim.cmd([[
     augroup DiffviewKeymaps
         autocmd!
         autocmd FileType DiffviewFiles lua SetDiffviewKeymaps()
-    augroup END
-]])
-
--- Function for disabling default keymaps in neo-tree
-function DisableNeoTreeKeymaps()
-	local opts = { noremap = true, silent = true }
-	vim.api.nvim_buf_set_keymap(0, "n", "j", "<Nop>", opts)
-	vim.api.nvim_buf_set_keymap(0, "n", "k", "<Nop>", opts)
-	vim.api.nvim_buf_set_keymap(0, "n", "l", "<Nop>", opts)
-	vim.api.nvim_buf_set_keymap(0, "n", "ö", "<Nop>", opts)
-	vim.api.nvim_buf_set_keymap(0, "n", "h", "<Nop>", opts)
-end
-
--- Auto commmand for disabling default keymaps in neo-tree
-vim.cmd([[
-    augroup DisableNeoTreeKeymaps
-        autocmd!
-        autocmd FileType neo-tree lua DisableNeoTreeKeymaps()
     augroup END
 ]])
 

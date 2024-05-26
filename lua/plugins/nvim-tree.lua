@@ -25,7 +25,7 @@ return {
 					},
 					git_placement = "after",
 					modified_placement = "after",
-                    padding = " ",
+					padding = " ",
 					show = {
 						folder_arrow = false,
 					},
