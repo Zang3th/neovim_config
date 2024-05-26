@@ -30,9 +30,11 @@ return {
 					mappings = {
 						i = {
 							["<Esc>"] = actions.close,
+                            ["<C-q>"] = actions.close,
 						},
 						n = {
 							["<Esc>"] = actions.close,
+                            ["<C-q>"] = actions.close,
 						},
 					},
 				},

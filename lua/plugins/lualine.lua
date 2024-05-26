@@ -9,6 +9,7 @@ return {
             options = { theme = "gruvbox_dark" },
             extensions = { "nvim-tree" },
             sections = {
+                lualine_b = { "filename" },
                 lualine_c = {},
             },
             inactive_sections = {
@@ -16,7 +17,7 @@ return {
             },
             tabline = {
                 lualine_a = { "hostname" },
-                lualine_b = { "filename" },
+                lualine_b = { "branch" },
                 lualine_c = { "diagnostics" },
             },
         })

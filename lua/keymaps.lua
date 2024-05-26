@@ -20,7 +20,7 @@ function M.telescope_keymaps()
 	vim.keymap.set("n", "ff", builtin.find_files, {})
 	vim.keymap.set("n", "fg", builtin.live_grep, {})
 	vim.keymap.set("n", "fs", builtin.grep_string, {})
-	vim.keymap.set("n", "ft", "<cmd>ToDoTelescope<CR>", {})
+	vim.keymap.set("n", "ft", ":TodoTelescope<CR>", {})
 end
 
 -- Keybindings for LSP
@@ -34,7 +34,7 @@ end
 
 -- Keybinding for none-ls
 function M.none_ls_keymaps()
-	vim.keymap.set("n", "<C-f>", vim.lsp.buf.format, {})
+	vim.keymap.set("n", "<C-f><C-f>", vim.lsp.buf.format, {})
 end
 
 -- Function for setting diffview keymaps
