@@ -52,6 +52,11 @@ function M.trouble_keymaps()
 	vim.api.nvim_set_keymap("n", "<leader>xd", ":TroubleToggle document_diagnostics<CR>", {})
 end
 
+-- Keybinding for markdown-preview
+function M.markdown_preview_keymaps()
+	vim.api.nvim_set_keymap("n", "<C-m>", ":MarkdownPreviewToggle<CR>", {})
+end
+
 -- Function for setting diffview keymaps
 function SetDiffviewKeymaps()
 	local opts = { noremap = true, silent = true }
