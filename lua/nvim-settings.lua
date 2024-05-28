@@ -1,31 +1,39 @@
--- Configure some general stuff
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
+local g = vim.g
+local opt = vim.opt
+local opt_global = vim.opt_global
 
-vim.opt.tabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.softtabstop = 4
-vim.opt.expandtab = true
-vim.opt.autoindent = true
+-- General stuff
+g.mapleader = " "
+g.maplocalleader = " "
+vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
 
-vim.opt.number = true
-vim.opt.showmode = false
-vim.opt.backspace = "indent,eol,start"
+-- Deactivate default file explorer
+g.loaded_netrw = 1
+g.loaded_netrwPlugin = 1
 
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+-- UI
+g.have_nerd_font = true
+opt.termguicolors = true
+opt.background = "dark"
+opt.lazyredraw = false
+-- opt.cmdheight = 0
 
-vim.g.have_nerd_font = true
-vim.opt.termguicolors = true
-vim.opt.background = "dark"
-
-vim.opt.splitright = true
-vim.opt.splitbelow = true
-
-vim.opt.clipboard = "unnamedplus"
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
-vim.opt.updatetime = 250
-vim.opt.timeoutlen = 500
-
-vim.o.sessionoptions="blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+-- Editor settings
+opt.tabstop = 4
+opt.shiftwidth = 4
+opt.softtabstop = 4
+opt.expandtab = true
+opt.autoindent = true
+opt.number = true
+opt.showmode = false
+opt.backspace = "indent,eol,start"
+opt.fillchars:append({ eob = " " })
+opt.clipboard = "unnamedplus"
+opt.ignorecase = true
+opt.smartcase = true
+opt.updatetime = 250
+opt.timeoutlen = 500
+opt.splitright = true
+opt.splitbelow = true
+opt_global.completeopt = { "menu", "menuone", "noselect" }
+opt.cursorline = true

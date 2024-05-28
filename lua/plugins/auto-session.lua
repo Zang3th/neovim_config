@@ -9,6 +9,8 @@ return {
 		require("auto-session").setup({
 			log_level = "error",
 			auto_session_suppress_dirs = { "~/", "~/Projects", "~/Downloads", "/" },
+			auto_session_use_git_branch = false,
+			auto_session_enable_last_session = false,
 			pre_save_cmds = { "NvimTreeClose" },
 			post_restore_cmds = { restore_nvim_tree, "NvimTreeOpen" },
 			session_lens = {

@@ -3,12 +3,32 @@ return {
 	priority = 999,
 	opts = ...,
 	config = function()
-		vim.o.background = "dark"
+		require("gruvbox").setup({
+			terminal_colors = true,
+			undercurl = true,
+			underline = true,
+			bold = true,
+			italic = {
+				strings = true,
+				emphasis = true,
+				comments = true,
+				operators = false,
+				folds = false,
+			},
+			strikethrough = true,
+			invert_selection = false,
+			invert_signs = false,
+			invert_tabline = false,
+			invert_intend_guides = false,
+			inverse = true, -- invert background for search, diffs, statuslines and errors
+			contrast = "", -- can be "hard", "soft" or empty string
+			palette_overrides = {},
+			overrides = {
+				["@text.emphasis"] = { fg = "#83a598" },
+			},
+			dim_inactive = false,
+			transparent_mode = false,
+		})
 		vim.cmd([[colorscheme gruvbox]])
-
-		-- Custom highlight groups
-		vim.cmd([[
-            highlight @text.emphasis guifg=#83a598 gui=italic
-        ]])
 	end,
 }
