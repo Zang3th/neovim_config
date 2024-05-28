@@ -17,7 +17,19 @@ return {
 				always_divide_middle = true,
 			},
 			extensions = { "nvim-tree", "lazy", "mason", "trouble" },
-			tabline = {},
+			tabline = {
+				lualine_a = { "hostname" },
+				lualine_b = {
+					{
+						"buffers",
+						symbols = {
+							modified = " ",
+							alternate_file = "",
+							directory = "",
+						},
+					},
+				},
+			},
 			winbar = {},
 			sections = {
 				lualine_a = {

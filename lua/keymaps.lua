@@ -16,7 +16,19 @@ vim.api.nvim_set_keymap("n", "<leader>fd", ":DiffviewOpen<CR>", opts)
 -- Open lazy
 vim.api.nvim_set_keymap("n", "<C-l>", ":Lazy<CR>", opts)
 
+-- Buffer control
+vim.api.nvim_set_keymap('n', '<leader>b<Right>', ':bnext<CR>', opts)
+vim.api.nvim_set_keymap('n', '<leader>b<Left>', ':bprevious<CR>', opts)
+vim.api.nvim_set_keymap('n', '<C-q>', ':bdelete<CR>', opts)
+
 local M = {}
+
+-- Keybinding for auto-session
+function M.auto_session_keymaps()
+	vim.keymap.set("n", "<leader>ls", require("auto-session.session-lens").search_session, {
+		noremap = true,
+	})
+end
 
 -- Keybindings for telescope
 function M.telescope_keymaps()
@@ -60,20 +72,6 @@ end
 function M.markdown_preview_keymaps()
 	vim.api.nvim_set_keymap("n", "<C-m>", ":MarkdownPreviewToggle<CR>", {})
 end
-
--- Keybinding for auto-session
-function M.auto_session_keymaps()
-    vim.keymap.set("n", "<leader>ls", require("auto-session.session-lens").search_session, {
-		noremap = true,
-	})
-end
-
--- Keybindings for barbar
-vim.api.nvim_set_keymap('n', '<C-q>', ':BufferClose<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>bs', ':BufferOrderByName<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>b<Left>', ':BufferPrevious<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>b<Right>', ':BufferNext<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>bx', ':BufferCloseAllButCurrent<CR>', opts)
 
 -- Function for setting diffview keymaps
 function SetDiffviewKeymaps()

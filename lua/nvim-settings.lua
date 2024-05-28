@@ -17,7 +17,6 @@ opt.termguicolors = true
 opt.background = "dark"
 opt.lazyredraw = false
 opt.fillchars:append({
-	vert = "|",
 	eob = " ",
 })
 -- opt.cmdheight = 0
