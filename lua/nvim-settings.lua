@@ -16,6 +16,10 @@ g.have_nerd_font = true
 opt.termguicolors = true
 opt.background = "dark"
 opt.lazyredraw = false
+opt.fillchars:append({
+	vert = "|",
+	eob = " ",
+})
 -- opt.cmdheight = 0
 
 -- Editor settings
@@ -27,7 +31,6 @@ opt.autoindent = true
 opt.number = true
 opt.showmode = false
 opt.backspace = "indent,eol,start"
-opt.fillchars:append({ eob = " " })
 opt.clipboard = "unnamedplus"
 opt.ignorecase = true
 opt.smartcase = true

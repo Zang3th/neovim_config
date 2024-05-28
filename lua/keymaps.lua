@@ -1,16 +1,20 @@
+local opts = { noremap = true, silent = true }
+
 -- Set keys for horizontal and vertical splitting
-vim.api.nvim_set_keymap("n", "<leader>sh", ":split<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<leader>sv", ":vsplit<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>sh", ":split<CR>", opts)
+vim.api.nvim_set_keymap("n", "<leader>sv", ":vsplit<CR>", opts)
+vim.api.nvim_set_keymap("n", "<leader>se", ":wincmd =<CR>", opts)
+vim.api.nvim_set_keymap("n", "<leader>sx", ":close<CR>", opts)
 
 -- Set key to to toggle nvimtree
-vim.api.nvim_set_keymap("n", "<C-b>", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-b>", ":NvimTreeToggle<CR>", opts)
 
 -- Keybindings for neogit
-vim.api.nvim_set_keymap("n", "<leader>gg", ":Neogit<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<leader>fd", ":DiffviewOpen<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>gg", ":Neogit<CR>", opts)
+vim.api.nvim_set_keymap("n", "<leader>fd", ":DiffviewOpen<CR>", opts)
 
 -- Open lazy
-vim.api.nvim_set_keymap("n", "<C-l>", ":Lazy<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-l>", ":Lazy<CR>", opts)
 
 local M = {}
 
@@ -59,14 +63,20 @@ end
 
 -- Keybinding for auto-session
 function M.auto_session_keymaps()
-	vim.keymap.set("n", "<leader>ls", require("auto-session.session-lens").search_session, {
+    vim.keymap.set("n", "<leader>ls", require("auto-session.session-lens").search_session, {
 		noremap = true,
 	})
 end
 
+-- Keybindings for barbar
+vim.api.nvim_set_keymap('n', '<C-q>', ':BufferClose<CR>', opts)
+vim.api.nvim_set_keymap('n', '<leader>bs', ':BufferOrderByName<CR>', opts)
+vim.api.nvim_set_keymap('n', '<leader>b<Left>', ':BufferPrevious<CR>', opts)
+vim.api.nvim_set_keymap('n', '<leader>b<Right>', ':BufferNext<CR>', opts)
+vim.api.nvim_set_keymap('n', '<leader>bx', ':BufferCloseAllButCurrent<CR>', opts)
+
 -- Function for setting diffview keymaps
 function SetDiffviewKeymaps()
-	local opts = { noremap = true, silent = true }
 	vim.api.nvim_buf_set_keymap(0, "n", "<C-q>", ":DiffviewClose<CR>", opts)
 end
 

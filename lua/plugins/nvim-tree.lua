@@ -8,6 +8,7 @@ return {
 	config = function()
 		require("nvim-tree").setup({
 			hijack_cursor = true,
+			auto_reload_on_write = true,
 			update_cwd = true,
 			update_focused_file = {
 				enable = true,
@@ -15,9 +16,13 @@ return {
 				ignore_list = { "help" },
 			},
 			view = {
-				width = 40,
+				cursorline = true,
+				preserve_window_proportions = true,
+				width = 35,
+				signcolumn = "no",
 			},
 			renderer = {
+				add_trailing = true,
 				highlight_git = "all",
 				icons = {
 					web_devicons = {
@@ -34,21 +39,13 @@ return {
 					modified_placement = "after",
 					padding = " ",
 					show = {
-						folder_arrow = false,
+						folder_arrow = true,
 					},
 					glyphs = {
 						default = "",
 						symlink = "",
 						bookmark = "󰆤",
 						modified = "",
-						folder = {
-							default = "",
-							open = "",
-							empty = "",
-							empty_open = "",
-							symlink = "",
-							symlink_open = "",
-						},
 						git = {
 							unstaged = "",
 							staged = "✓",
