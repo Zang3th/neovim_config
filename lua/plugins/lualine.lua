@@ -10,7 +10,7 @@ return {
             extensions = { "nvim-tree" },
             sections = {
                 lualine_b = { "filename" },
-                lualine_c = {},
+                lualine_c = { {require('auto-session.lib').current_session_name} },
             },
             inactive_sections = {
                 lualine_x = {},

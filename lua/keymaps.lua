@@ -57,6 +57,13 @@ function M.markdown_preview_keymaps()
 	vim.api.nvim_set_keymap("n", "<C-m>", ":MarkdownPreviewToggle<CR>", {})
 end
 
+-- Keybinding for auto-session
+function M.auto_session_keymaps()
+	vim.keymap.set("n", "<leader>ls", require("auto-session.session-lens").search_session, {
+		noremap = true,
+	})
+end
+
 -- Function for setting diffview keymaps
 function SetDiffviewKeymaps()
 	local opts = { noremap = true, silent = true }
