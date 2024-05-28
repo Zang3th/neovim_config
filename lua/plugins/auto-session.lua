@@ -3,10 +3,6 @@ local function restore_nvim_tree()
 	nvim_tree.change_dir(vim.fn.getcwd())
 end
 
-local function restore_barbar()
-    vim.api.nvim_exec_autocmds('BufWinEnter', {buffer = vim.fn.bufnr('#')})
-end
-
 return {
 	"rmagatti/auto-session",
 	config = function()
@@ -16,7 +12,7 @@ return {
 			auto_session_use_git_branch = false,
 			auto_session_enable_last_session = false,
 			pre_save_cmds = { "NvimTreeClose" },
-			post_restore_cmds = { restore_nvim_tree, "NvimTreeOpen", restore_barbar },
+			post_restore_cmds = { restore_nvim_tree, "NvimTreeOpen" },
 			session_lens = {
 				buftypes_to_ignore = {},
 				load_on_setup = true,
