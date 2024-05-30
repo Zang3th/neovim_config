@@ -25,6 +25,7 @@ return {
 			palette_overrides = {},
 			overrides = {
 				["@text.emphasis"] = { fg = "#83a598" },
+                ["@macro"] = { fg = "#fb4934" },
 			},
 			dim_inactive = false,
 			transparent_mode = false,

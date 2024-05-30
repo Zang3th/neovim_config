@@ -28,6 +28,9 @@ return {
                         },
                     },
                 },
+                lualine_x = {
+                    "diagnostics",
+                },
             },
             winbar = {},
             sections = {
