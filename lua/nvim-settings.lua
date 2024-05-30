@@ -19,7 +19,12 @@ opt.lazyredraw = false
 opt.fillchars:append({
 	eob = " ",
 })
--- opt.cmdheight = 0
+
+-- Line wrap
+opt.wrap = true
+opt.linebreak = true
+opt.showbreak = '›››'
+opt.breakindent = true
 
 -- Editor settings
 opt.tabstop = 4

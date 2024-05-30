@@ -44,8 +44,8 @@ return {
 			sources = {
 				null_ls.builtins.formatting.stylua,
                 null_ls.builtins.formatting.prettier,
-				-- TODO: Add linting and formatting for cpp
-			},
+			    null_ls.builtins.formatting.clang_format,
+            },
 		})
 
 		-- Load custom keymaps

@@ -14,11 +14,13 @@ vim.api.nvim_set_keymap("n", "<leader>gg", ":Neogit<CR>", opts)
 vim.api.nvim_set_keymap("n", "<leader>fd", ":DiffviewOpen<CR>", opts)
 
 -- Open lazy
-vim.api.nvim_set_keymap("n", "<C-l>", ":Lazy<CR>", opts)
+vim.api.nvim_set_keymap("n", "<leader>ll", ":Lazy<CR>", opts)
 
 -- Buffer control
 vim.api.nvim_set_keymap('n', '<leader>b<Right>', ':bnext<CR>', opts)
 vim.api.nvim_set_keymap('n', '<leader>b<Left>', ':bprevious<CR>', opts)
+vim.api.nvim_set_keymap('n', '<leader>bl', ':bnext<CR>', opts)
+vim.api.nvim_set_keymap('n', '<leader>bh', ':bprevious<CR>', opts)
 vim.api.nvim_set_keymap('n', '<C-q>', ':bdelete<CR>', opts)
 vim.api.nvim_set_keymap('n', '<leader>bx', ':%bd|e#|bd#<CR>', opts)
 
