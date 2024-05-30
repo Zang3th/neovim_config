@@ -66,9 +66,7 @@ end
 
 -- Keybindings for trouble
 function M.trouble_keymaps()
-	vim.api.nvim_set_keymap("n", "<leader>xx", ":TroubleToggle<CR>", {})
-	vim.api.nvim_set_keymap("n", "<leader>xw", ":TroubleToggle workspace_diagnostics<CR>", {})
-	vim.api.nvim_set_keymap("n", "<leader>xd", ":TroubleToggle document_diagnostics<CR>", {})
+	vim.api.nvim_set_keymap("n", "<leader>xx", ":Trouble diagnostics toggle<CR>", {})
 end
 
 -- Keybinding for markdown-preview
