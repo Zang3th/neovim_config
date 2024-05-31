@@ -24,8 +24,10 @@ return {
 			contrast = "", -- can be "hard", "soft" or empty string
 			palette_overrides = {},
 			overrides = {
-				["@text.emphasis"] = { fg = "#83a598" },
-                ["@macro"] = { fg = "#fb4934" },
+				["@text.emphasis"] = { fg = "#83a598" }, -- Blue
+                ["@macro"] = { fg = "#ebdbb2", bold = true }, -- FG
+                ["@lsp.type.class.cpp"] = { fg = "#8ec07c" }, -- Aqua
+                ["@lsp.type.struct.cpp"] = { fg = "#8ec07c" }, -- Aqua
 			},
 			dim_inactive = false,
 			transparent_mode = false,

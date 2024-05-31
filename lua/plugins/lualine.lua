@@ -12,6 +12,7 @@ return {
                 theme = "gruvbox_dark",
                 globalstatus = true,
                 refresh = {
+                    tabline = 100,
                     statusline = 100,
                 },
                 always_divide_middle = true,
@@ -21,6 +22,11 @@ return {
                 lualine_a = {
                     {
                         "buffers",
+                        show_modified_status = true,
+                        mode = 2,
+                        filetype_names = {
+                           NvimTree = "NvimTree",
+                        },
                         symbols = {
                             modified = " ",
                             alternate_file = "",
