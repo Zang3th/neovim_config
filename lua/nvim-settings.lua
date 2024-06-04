@@ -44,3 +44,4 @@ opt.splitright = true
 opt.splitbelow = true
 opt_global.completeopt = { "menu", "menuone", "noselect" }
 opt.cursorline = true
+opt.conceallevel = 2
