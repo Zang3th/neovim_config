@@ -19,9 +19,7 @@ vim.api.nvim_set_keymap("n", "<leader>ll", ":Lazy<CR>", opts)
 -- Buffer control
 vim.api.nvim_set_keymap("n", "<leader>b<Right>", ":bnext<CR>", opts)
 vim.api.nvim_set_keymap("n", "<leader>b<Left>", ":bprevious<CR>", opts)
-vim.api.nvim_set_keymap("n", "<leader>bl", ":bnext<CR>", opts)
-vim.api.nvim_set_keymap("n", "<leader>bh", ":bprevious<CR>", opts)
-vim.api.nvim_set_keymap("n", "<C-q>", ":bdelete<CR>", opts)
+vim.api.nvim_set_keymap("n", "<leader>bd", ":bdelete<CR>", opts)
 vim.api.nvim_set_keymap("n", "<leader>bx", ":%bd|e#|bd#<CR>", opts)
 vim.api.nvim_set_keymap("n", "<leader>b1", ":LualineBuffersJump! 1<CR>", opts)
 vim.api.nvim_set_keymap("n", "<leader>b2", ":LualineBuffersJump! 2<CR>", opts)
@@ -32,6 +30,12 @@ vim.api.nvim_set_keymap("n", "<leader>b6", ":LualineBuffersJump! 6<CR>", opts)
 vim.api.nvim_set_keymap("n", "<leader>b7", ":LualineBuffersJump! 7<CR>", opts)
 vim.api.nvim_set_keymap("n", "<leader>b8", ":LualineBuffersJump! 8<CR>", opts)
 vim.api.nvim_set_keymap("n", "<leader>b9", ":LualineBuffersJump! 9<CR>", opts)
+
+-- Tab control
+vim.api.nvim_set_keymap('n', '<Leader>tt', ':tabnew<CR>', opts)
+vim.api.nvim_set_keymap('n', '<Leader>t<Right>', ':tabnext<CR>', opts)
+vim.api.nvim_set_keymap('n', '<Leader>t<Left>', ':tabprevious<CR>', opts)
+vim.api.nvim_set_keymap('n', '<Leader>tx', ':tabclose<CR>', opts)
 
 local M = {}
 

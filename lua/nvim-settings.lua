@@ -45,3 +45,8 @@ opt.splitbelow = true
 opt_global.completeopt = { "menu", "menuone", "noselect" }
 opt.cursorline = true
 opt.conceallevel = 2
+
+-- Command line mode
+opt.wildmenu = true
+opt.wildmode = "full"
+opt.history = 200

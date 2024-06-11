@@ -24,8 +24,9 @@ return {
                         "buffers",
                         show_modified_status = true,
                         mode = 2,
+                        max_length = vim.o.columns * 3 / 4,
                         filetype_names = {
-                           NvimTree = "NvimTree",
+                            NvimTree = "NvimTree",
                         },
                         symbols = {
                             modified = " ",
@@ -34,8 +35,11 @@ return {
                         },
                     },
                 },
-                lualine_x = {
-                    "diagnostics",
+                lualine_z = {
+                    {
+                        "tabs",
+                        mode = 0,
+                    },
                 },
             },
             winbar = {},
@@ -43,17 +47,15 @@ return {
                 lualine_a = {
                     {
                         "mode",
+                        mode = 2,
+                        path = 1,
                     },
                 },
                 lualine_b = { "branch" },
                 lualine_c = { "diff" },
-                lualine_x = { "encoding", "fileformat" },
-                lualine_y = { "filetype" },
-                lualine_z = {
-                    {
-                        "location",
-                    },
-                },
+                lualine_x = { "diagnostics" },
+                lualine_y = { "encoding" },
+                lualine_z = { "location" },
             },
             inactive_sections = {
                 lualine_x = {},
