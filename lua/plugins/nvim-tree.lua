@@ -88,6 +88,7 @@ return {
         })
         vim.cmd([[
             highlight NvimTreeFolderName guifg=#83a598
+            highlight NvimTreeOpenedFolderName guifg=#83a598 gui=bold
             highlight NvimTreeGitDirty guifg=#fe8019
             highlight NvimTreeGitNew guifg=#b8bb26
             highlight NvimTreeGitDeleted guifg=#fb4934
