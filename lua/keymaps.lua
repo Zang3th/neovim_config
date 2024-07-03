@@ -23,15 +23,6 @@ vim.api.nvim_set_keymap("n", "<leader>bl", ":bnext<CR>", opts)
 vim.api.nvim_set_keymap("n", "<leader>bh", ":bprevious<CR>", opts)
 vim.api.nvim_set_keymap("n", "<leader>bd", ":bdelete<CR>", opts)
 vim.api.nvim_set_keymap("n", "<leader>bx", ":%bd|e#|bd#<CR>", opts)
-vim.api.nvim_set_keymap("n", "<leader>b1", ":LualineBuffersJump! 1<CR>", opts)
-vim.api.nvim_set_keymap("n", "<leader>b2", ":LualineBuffersJump! 2<CR>", opts)
-vim.api.nvim_set_keymap("n", "<leader>b3", ":LualineBuffersJump! 3<CR>", opts)
-vim.api.nvim_set_keymap("n", "<leader>b4", ":LualineBuffersJump! 4<CR>", opts)
-vim.api.nvim_set_keymap("n", "<leader>b5", ":LualineBuffersJump! 5<CR>", opts)
-vim.api.nvim_set_keymap("n", "<leader>b6", ":LualineBuffersJump! 6<CR>", opts)
-vim.api.nvim_set_keymap("n", "<leader>b7", ":LualineBuffersJump! 7<CR>", opts)
-vim.api.nvim_set_keymap("n", "<leader>b8", ":LualineBuffersJump! 8<CR>", opts)
-vim.api.nvim_set_keymap("n", "<leader>b9", ":LualineBuffersJump! 9<CR>", opts)
 
 -- Tab control
 vim.api.nvim_set_keymap('n', '<Leader>tt', ':tabnew<CR>', opts)
@@ -53,10 +44,11 @@ end
 -- Keybindings for telescope
 function M.telescope_keymaps()
     local builtin = require("telescope.builtin")
-    vim.keymap.set("n", "ff", builtin.find_files, {})
-    vim.keymap.set("n", "fg", builtin.live_grep, {})
-    vim.keymap.set("n", "fs", builtin.grep_string, {})
-    vim.keymap.set("n", "ft", ":TodoTelescope<CR>", {})
+    vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
+    vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
+    vim.keymap.set("n", "<leader>fs", builtin.grep_string, {})
+    vim.keymap.set("n", "<leader>ft", ":TodoTelescope<CR>", {})
+    vim.keymap.set("n", "<leader>fb", ":Telescope buffers<CR>", {})
 end
 
 -- Keybindings for LSP
