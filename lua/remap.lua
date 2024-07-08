@@ -20,4 +20,4 @@ vim.api.nvim_set_keymap("x", "<", "<gv", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("x", ">", ">gv", { noremap = true, silent = true })
 
 -- Map 'ggVG' to CNTRL + a
-vim.api.nvim_set_keymap('n', '<C-a>', 'ggVG', { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-a>", "ggVG", { noremap = true, silent = true })

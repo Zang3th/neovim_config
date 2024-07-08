@@ -45,6 +45,12 @@ opt.splitbelow = true
 opt_global.completeopt = { "menu", "menuone", "noselect" }
 opt.cursorline = true
 opt.conceallevel = 0
+opt.listchars = {
+    tab = '▸ ',
+    trail = '•',
+    space = '·'
+}
+opt.list = true
 
 -- Command line mode
 opt.wildmenu = true

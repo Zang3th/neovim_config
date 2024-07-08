@@ -25,12 +25,12 @@ vim.api.nvim_set_keymap("n", "<leader>bd", ":bdelete<CR>", opts)
 vim.api.nvim_set_keymap("n", "<leader>bx", ":%bd|e#|bd#<CR>", opts)
 
 -- Tab control
-vim.api.nvim_set_keymap('n', '<Leader>tt', ':tabnew<CR>', opts)
-vim.api.nvim_set_keymap('n', '<Leader>t<Right>', ':tabnext<CR>', opts)
-vim.api.nvim_set_keymap('n', '<Leader>t<Left>', ':tabprevious<CR>', opts)
-vim.api.nvim_set_keymap('n', '<Leader>tl', ':tabnext<CR>', opts)
-vim.api.nvim_set_keymap('n', '<Leader>th', ':tabprevious<CR>', opts)
-vim.api.nvim_set_keymap('n', '<Leader>tx', ':tabclose<CR>', opts)
+vim.api.nvim_set_keymap("n", "<Leader>tt", ":tabnew<CR>", opts)
+vim.api.nvim_set_keymap("n", "<Leader>t<Right>", ":tabnext<CR>", opts)
+vim.api.nvim_set_keymap("n", "<Leader>t<Left>", ":tabprevious<CR>", opts)
+vim.api.nvim_set_keymap("n", "<Leader>tl", ":tabnext<CR>", opts)
+vim.api.nvim_set_keymap("n", "<Leader>th", ":tabprevious<CR>", opts)
+vim.api.nvim_set_keymap("n", "<Leader>tx", ":tabclose<CR>", opts)
 
 local M = {}
 
