@@ -12,35 +12,11 @@ return {
                 theme = "gruvbox_dark",
                 globalstatus = true,
                 refresh = {
-                    tabline = 100,
                     statusline = 100,
                 },
-                always_divide_middle = true,
             },
             extensions = { "nvim-tree", "lazy", "mason", "trouble" },
-            tabline = {
-                lualine_a = {
-                    {
-                        "filename",
-                        file_status = true,
-                        symbols = {
-                            modified = " ",
-                        },
-                    },
-                },
-                lualine_z = {
-                    {
-                        "tabs",
-                        tab_max_length = 40,
-                        max_length = vim.o.columns / 2,
-                        mode = 0,
-                        show_modified_status = true,
-                        symbols = {
-                            modified = " ",
-                        },
-                    },
-                },
-            },
+            tabline = {},
             winbar = {},
             sections = {
                 lualine_a = {

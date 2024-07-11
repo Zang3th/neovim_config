@@ -4,7 +4,6 @@ local opts = { noremap = true, silent = true }
 vim.api.nvim_set_keymap("n", "<leader>sh", ":split<CR>", opts)
 vim.api.nvim_set_keymap("n", "<leader>sv", ":vsplit<CR>", opts)
 vim.api.nvim_set_keymap("n", "<leader>se", ":wincmd =<CR>", opts)
-vim.api.nvim_set_keymap("n", "<leader>sx", ":close<CR>", opts)
 
 -- Set key to to toggle nvimtree
 vim.api.nvim_set_keymap("n", "<C-b>", ":NvimTreeToggle<CR>", opts)
@@ -21,8 +20,6 @@ vim.api.nvim_set_keymap("n", "<leader>b<Right>", ":bnext<CR>", opts)
 vim.api.nvim_set_keymap("n", "<leader>b<Left>", ":bprevious<CR>", opts)
 vim.api.nvim_set_keymap("n", "<leader>bl", ":bnext<CR>", opts)
 vim.api.nvim_set_keymap("n", "<leader>bh", ":bprevious<CR>", opts)
-vim.api.nvim_set_keymap("n", "<leader>bd", ":bdelete<CR>", opts)
-vim.api.nvim_set_keymap("n", "<leader>bx", ":%bd|e#|bd#<CR>", opts)
 
 -- Tab control
 vim.api.nvim_set_keymap("n", "<Leader>tt", ":tabnew<CR>", opts)
@@ -30,7 +27,7 @@ vim.api.nvim_set_keymap("n", "<Leader>t<Right>", ":tabnext<CR>", opts)
 vim.api.nvim_set_keymap("n", "<Leader>t<Left>", ":tabprevious<CR>", opts)
 vim.api.nvim_set_keymap("n", "<Leader>tl", ":tabnext<CR>", opts)
 vim.api.nvim_set_keymap("n", "<Leader>th", ":tabprevious<CR>", opts)
-vim.api.nvim_set_keymap("n", "<Leader>tx", ":tabclose<CR>", opts)
+vim.api.nvim_set_keymap("n", "<Leader>td", ":tabclose<CR>", opts)
 
 local M = {}
 
@@ -73,6 +70,14 @@ end
 -- Keybinding for markdown-preview
 function M.markdown_preview_keymaps()
     vim.api.nvim_set_keymap("n", "<C-m>", ":MarkdownPreviewToggle<CR>", {})
+end
+
+-- Keybindings for substitute
+function M.sub_keymaps()
+    local substitute = require("substitute")
+    vim.keymap.set("n", "s", substitute.operator)
+    vim.keymap.set("n", "ss", substitute.line)
+    vim.keymap.set("x", "s", substitute.visual)
 end
 
 -- Function for setting diffview keymaps
