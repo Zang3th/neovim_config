@@ -52,12 +52,15 @@ return {
                 },
                 modified = {
                     fg = "#fabd2f",
+                    bg = "#3C3836",
                 },
                 modified_visible = {
                     fg = "#fabd2f",
+                    bg = "#3C3836",
                 },
                 modified_selected = {
                     fg = "#fabd2f",
+                    bg = "#282828",
                 },
             },
         })

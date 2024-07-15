@@ -59,7 +59,7 @@ end
 
 -- Keybinding for none-ls
 function M.none_ls_keymaps()
-    vim.keymap.set("n", "<C-f><C-f>", vim.lsp.buf.format, {})
+    vim.keymap.set({"n", "v"}, "<C-f><C-f>", vim.lsp.buf.format, {})
 end
 
 -- Keybindings for trouble

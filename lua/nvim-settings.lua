@@ -17,21 +17,25 @@ opt.termguicolors = true
 opt.background = "dark"
 opt.lazyredraw = false
 opt.fillchars:append({
-	eob = " ",
+    eob = " ",
 })
 
 -- Line wrap
 opt.wrap = true
 opt.linebreak = true
-opt.showbreak = '›››'
+opt.showbreak = "›››"
 opt.breakindent = true
 
--- Editor settings
+-- Indenting
 opt.tabstop = 4
 opt.shiftwidth = 4
 opt.softtabstop = 4
 opt.expandtab = true
 opt.autoindent = true
+opt.smartindent = true
+opt.cindent = true
+
+-- Editor settings
 opt.number = true
 opt.showmode = false
 opt.backspace = "indent,eol,start"
@@ -46,9 +50,9 @@ opt_global.completeopt = { "menu", "menuone", "noselect" }
 opt.cursorline = true
 opt.conceallevel = 0
 opt.listchars = {
-    tab = '▸ ',
-    trail = '•',
-    space = '·'
+    tab = "▸ ",
+    trail = "•",
+    space = "·",
 }
 opt.list = true
 
