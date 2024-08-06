@@ -41,6 +41,7 @@ return {
 
         -- Setup null-ls with additional sources
         null_ls.setup({
+            debug = true,
             sources = {
                 null_ls.builtins.formatting.stylua,
                 null_ls.builtins.formatting.prettier,
