@@ -42,7 +42,6 @@ return {
                     "clangd",
                     "--clang-tidy",
                     "-j=12",
-                    "--compile-commands-dir=Debug_Build",
                     "--all-scopes-completion",
                     "--completion-style=detailed",
                     "--header-insertion-decorators",
