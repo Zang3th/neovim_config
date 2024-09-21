@@ -7,19 +7,21 @@ return {
     "rmagatti/auto-session",
     config = function()
         require("auto-session").setup({
+            auto_restore_last_session = false,
+            continue_restore_on_error = false,
             log_level = "error",
-            silent_restore = false,
-            auto_session_suppress_dirs = { "~/", "~/Projects", "~/Downloads", "/" },
-            auto_session_use_git_branch = false,
-            auto_session_enable_last_session = false,
-            pre_save_cmds = { "NvimTreeClose" },
             post_restore_cmds = { restore_nvim_tree, "NvimTreeOpen" },
+            pre_save_cmds = { "NvimTreeClose" },
             session_lens = {
                 buftypes_to_ignore = {},
                 load_on_setup = true,
-                theme_conf = { border = true },
                 previewer = false,
+                theme_conf = {
+                    border = true
+                },
             },
+            suppressed_dirs = { "~/", "~/Projects", "~/Downloads", "/" },
+            use_git_branch = false,
         })
         local keymaps = require("keymaps")
         keymaps.auto_session_keymaps()

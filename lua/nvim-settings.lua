@@ -2,6 +2,10 @@ local g = vim.g
 local opt = vim.opt
 local opt_global = vim.opt_global
 
+-- Deactivate specific providers
+g.loaded_node_provider = 0
+g.loaded_perl_provider = 0
+
 -- General stuff
 g.mapleader = " "
 g.maplocalleader = " "

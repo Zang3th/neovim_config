@@ -7,6 +7,20 @@ return {
         end,
     },
     {
+        "WhoIsSethDaniel/mason-tool-installer.nvim",
+        lazy = false,
+        config = function()
+            require("mason-tool-installer").setup({
+                ensure_installed = {
+                    "markdownlint",
+                    "stylua",
+                    "prettier",
+                    "clang-format",
+                },
+            })
+        end,
+    },
+    {
         "williamboman/mason-lspconfig.nvim",
         lazy = false,
         opts = {
