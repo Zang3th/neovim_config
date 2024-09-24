@@ -64,3 +64,8 @@ opt.list = true
 opt.wildmenu = true
 opt.wildmode = "full"
 opt.history = 200
+
+-- Add specific file types
+vim.filetype.add({
+    pattern = { [".*/hypr/.*%.conf"] = "hyprlang" },
+})
