@@ -21,3 +21,8 @@ vim.api.nvim_set_keymap("x", ">", ">gv", { noremap = true, silent = true })
 
 -- Map 'ggVG' to CNTRL + a
 vim.api.nvim_set_keymap("n", "<C-a>", "ggVG", { noremap = true, silent = true })
+
+-- Keybindings for popup menus
+vim.api.nvim_set_keymap('c', '<Up>', 'pumvisible() ? "<C-p>" : "<Up>"', {expr = true, noremap = true})
+vim.api.nvim_set_keymap('c', '<Down>', 'pumvisible() ? "<C-n>" : "<Down>"', {expr = true, noremap = true})
+vim.api.nvim_set_keymap('c', '<Right>', 'pumvisible() ? "<C-y>" : "<Right>"', {expr = true, noremap = true })

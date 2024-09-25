@@ -10,12 +10,17 @@ return {
         require("lualine").setup({
             options = {
                 theme = "gruvbox_dark",
-                globalstatus = true,
+                globalstatus = false,
                 refresh = {
                     statusline = 100,
                 },
             },
-            extensions = { "nvim-tree", "lazy", "mason", "trouble" },
+            extensions = { "nvim-tree", "lazy", "mason", "trouble", "nvim-dap-ui" },
+            ignore_focus = {
+                "dapui_watches", "dapui_breakpoints",
+                "dapui_scopes", "dapui_console",
+                "dapui_stacks", "dap_repl"
+            },
             tabline = {},
             winbar = {},
             sections = {

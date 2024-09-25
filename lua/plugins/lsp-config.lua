@@ -16,6 +16,7 @@ return {
                     "stylua",
                     "prettier",
                     "clang-format",
+                    "codelldb",
                 },
             })
         end,
@@ -55,7 +56,7 @@ return {
                 cmd = {
                     "clangd",
                     "--clang-tidy",
-                    "-j=12",
+                    "-j=20",
                     "--all-scopes-completion",
                     "--completion-style=detailed",
                     "--header-insertion-decorators",

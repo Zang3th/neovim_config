@@ -93,4 +93,16 @@ vim.cmd([[
     augroup END
 ]])
 
+-- Keybindings for dap
+function M.dap_keymaps()
+    local dap_ui = require("dapui")
+    vim.keymap.set("n", "<F3>", function() dap_ui.toggle({ reset = true }) end, {})
+    vim.keymap.set("n", "<F4>", ":DapDisconnect<CR>", {})
+    vim.keymap.set("n", "<F5>", ":DapContinue<CR>", {})
+    vim.keymap.set("n", "<F6>", ":DapToggleBreakpoint<CR>", {})
+    vim.keymap.set("n", "<F10>", ":DapStepOver<CR>", {})
+    vim.keymap.set("n", "<F11>", ":DapStepInto<CR>", {})
+    vim.keymap.set("n", "<F12>", ":DapStepOut<CR>", {})
+end
+
 return M
