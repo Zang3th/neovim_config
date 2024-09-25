@@ -97,7 +97,7 @@ vim.cmd([[
 function M.dap_keymaps()
     local dap_ui = require("dapui")
     vim.keymap.set("n", "<F3>", function() dap_ui.toggle({ reset = true }) end, {})
-    vim.keymap.set("n", "<F4>", ":DapDisconnect<CR>", {})
+    vim.keymap.set("n", "<F4>", ":DapTerminate<CR>", {})
     vim.keymap.set("n", "<F5>", ":DapContinue<CR>", {})
     vim.keymap.set("n", "<F6>", ":DapToggleBreakpoint<CR>", {})
     vim.keymap.set("n", "<F10>", ":DapStepOver<CR>", {})
