@@ -31,7 +31,7 @@ return {
             require("mason-lspconfig").setup({
                 ensure_installed = {
                     "lua_ls",
-                    "clangd",
+                    -- "clangd",
                     "cmake",
                     "autotools_ls",
                     "glsl_analyzer",
@@ -54,7 +54,7 @@ return {
                 capabilities = capabilities,
                 filetypes = { "c", "cpp", "objc", "objcpp" },
                 cmd = {
-                    "clangd",
+                    "clangd-17",
                     "--clang-tidy",
                     "-j=20",
                     "--all-scopes-completion",
