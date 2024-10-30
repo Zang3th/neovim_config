@@ -4,6 +4,13 @@ return {
     config = function()
         local configs = require("nvim-treesitter.configs")
         configs.setup({
+            enable = true,
+            disable = {
+                "latex",
+            },
+            ignore_install = {
+                "latex",
+            },
             ensure_installed = {
                 "c",
                 "lua",
@@ -15,13 +22,15 @@ return {
                 "cpp",
                 "html",
                 "glsl",
-                "latex",
                 "hyprlang",
             },
             auto_install = true,
             sync_install = false,
             highlight = {
                 enable = true,
+                disable = {
+                    "latex",
+                },
                 additional_vim_regex_highlighting = false,
             },
             indent = {

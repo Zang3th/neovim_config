@@ -75,9 +75,9 @@ end
 -- Keybindings for substitute
 function M.sub_keymaps()
     local substitute = require("substitute")
-    vim.keymap.set("n", "s", substitute.operator)
-    vim.keymap.set("n", "ss", substitute.line)
-    vim.keymap.set("x", "s", substitute.visual)
+    vim.keymap.set("n", "s", substitute.operator, {})
+    vim.keymap.set("n", "ss", substitute.line, {})
+    vim.keymap.set("x", "s", substitute.visual, {})
 end
 
 -- Function for setting diffview keymaps
@@ -103,6 +103,15 @@ function M.dap_keymaps()
     vim.keymap.set("n", "<F10>", ":DapStepOver<CR>", {})
     vim.keymap.set("n", "<F11>", ":DapStepInto<CR>", {})
     vim.keymap.set("n", "<F12>", ":DapStepOut<CR>", {})
+end
+
+-- Keybindings for vimtex
+function M.vimtex_keymaps()
+    vim.keymap.set("n", "<leader>lc", ":VimtexCompile<CR>", {})
+    vim.keymap.set("n", "dse", "<Plug>(vimtex-env-delete)", {})
+    vim.keymap.set("n", "cse", "<Plug>(vimtex-env-change)", {})
+    vim.keymap.set("n", "dsc", "<Plug>(vimtex-cmd-delete)", {})
+    vim.keymap.set("n", "csc", "<Plug>(vimtex-cmd-change)", {})
 end
 
 return M
