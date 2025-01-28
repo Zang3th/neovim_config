@@ -15,5 +15,5 @@
 
 ## Appearance
 
-![Screenshot_003-1](res/Screenshot_003-1.png)
-![Screenshot_003-2](res/Screenshot_003-2.png)
+![Screenshot_004-1](res/Screenshot_004-1.png)
+![Screenshot_004-2](res/Screenshot_004-2.png)
