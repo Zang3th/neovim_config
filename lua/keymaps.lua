@@ -16,15 +16,11 @@ vim.api.nvim_set_keymap("n", "<leader>fd", ":DiffviewOpen<CR>", opts)
 vim.api.nvim_set_keymap("n", "<leader>ll", ":Lazy<CR>", opts)
 
 -- Buffer control
-vim.api.nvim_set_keymap("n", "<leader>b<Right>", ":bnext<CR>", opts)
-vim.api.nvim_set_keymap("n", "<leader>b<Left>", ":bprevious<CR>", opts)
 vim.api.nvim_set_keymap("n", "<leader>bl", ":bnext<CR>", opts)
 vim.api.nvim_set_keymap("n", "<leader>bh", ":bprevious<CR>", opts)
 
 -- Tab control
 vim.api.nvim_set_keymap("n", "<Leader>tt", ":tabnew<CR>", opts)
-vim.api.nvim_set_keymap("n", "<Leader>t<Right>", ":tabnext<CR>", opts)
-vim.api.nvim_set_keymap("n", "<Leader>t<Left>", ":tabprevious<CR>", opts)
 vim.api.nvim_set_keymap("n", "<Leader>tl", ":tabnext<CR>", opts)
 vim.api.nvim_set_keymap("n", "<Leader>th", ":tabprevious<CR>", opts)
 vim.api.nvim_set_keymap("n", "<Leader>td", ":tabclose<CR>", opts)
@@ -43,9 +39,7 @@ function M.telescope_keymaps()
     local builtin = require("telescope.builtin")
     vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
     vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
-    vim.keymap.set("n", "<leader>fs", builtin.grep_string, {})
     vim.keymap.set("n", "<leader>ft", ":TodoTelescope<CR>", {})
-    vim.keymap.set("n", "<leader>fb", ":Telescope buffers<CR>", {})
 end
 
 -- Keybindings for LSP

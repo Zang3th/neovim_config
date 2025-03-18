@@ -8,10 +8,21 @@ return {
 
         vim.g.vimtex_compiler_method = 'latexmk'
         vim.g.vimtex_compiler_latexmk_engines = {
-            ['_'] = '-xelatex', -- Default
+            -- ['_'] = '-xelatex', -- Default (comment in if working on CV)
             pdflatex = '-pdf',
             lualatex = '-lualatex',
             xelatex = '-xelatex',
+        }
+
+        vim.g.vimtex_compiler_latexmk = {
+            build_dir = '',
+            options = {
+                '-shell-escape',
+                '-verbose',
+                '-file-line-error',
+                '-synctex=1',
+                '-interaction=nonstopmode'
+            }
         }
 
         local keymap = require("keymaps")
