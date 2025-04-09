@@ -4,7 +4,7 @@
 
 - Just another neovim config
 - Modular plugin integration
-- Covers all the basics like *git-integration*, *auto-complete*, *fuzzy-finding* ...
+- Covers all the basics like *lsp-integration*, *fuzzy-finding*, *git/diffview* ...
 - Color scheme is *gruvbox_dark*
 
 ## Great learning resources
