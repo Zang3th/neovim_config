@@ -1,9 +1,9 @@
 return {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
+    lazy = false,
     config = function()
-        local configs = require("nvim-treesitter.configs")
-        configs.setup({
+        require("nvim-treesitter.configs").setup({
             enable = true,
             disable = {
                 "latex",
@@ -12,17 +12,21 @@ return {
                 "latex",
             },
             ensure_installed = {
+                "bash",
                 "c",
+                "cmake",
+                "cpp",
+                "css",
+                "glsl",
+                "html",
+                "hyprlang",
                 "lua",
-                "vim",
-                "vimdoc",
-                "query",
+                "luadoc",
                 "markdown",
                 "markdown_inline",
-                "cpp",
-                "html",
-                "glsl",
-                "hyprlang",
+                "vim",
+                "vimdoc",
+                "yaml",
             },
             auto_install = true,
             sync_install = false,

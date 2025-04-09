@@ -3,11 +3,12 @@ return {
     dependencies = {
         "nvim-lua/plenary.nvim",
         "sindrets/diffview.nvim",
+        "nvim-telescope/telescope.nvim",
     },
+    lazy = false,
     config = function()
         require("diffview").setup()
-        local configs = require("neogit")
-        configs.setup({
+        require("neogit").setup({
             integrations = {
                 diffview = true,
             },

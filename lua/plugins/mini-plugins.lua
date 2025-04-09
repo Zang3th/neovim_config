@@ -1,10 +1,8 @@
 return {
     "echasnovski/mini.trailspace",
     version = "*",
+    lazy = false,
     config = function()
-        local mini_trailspace = require("mini.trailspace")
-        mini_trailspace.setup({
-            -- default config
-        })
+        require("mini.trailspace").setup()
     end,
 }

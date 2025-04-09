@@ -4,8 +4,9 @@ return {
         "nvim-tree/nvim-web-devicons",
         opt = true,
     },
+    lazy = false,
+    priority = 999,
     event = { "BufReadPost", "BufNewFile" },
-
     config = function()
         require("lualine").setup({
             options = {
@@ -15,13 +16,17 @@ return {
                     statusline = 100,
                 },
             },
-            extensions = { "nvim-tree", "lazy", "mason", "trouble", "nvim-dap-ui" },
-            ignore_focus = {
-                "dapui_watches", "dapui_breakpoints",
-                "dapui_scopes", "dapui_console",
-                "dapui_stacks", "dap_repl"
+            extensions = { "nvim-tree", "lazy", "mason", "trouble" },
+            tabline = {
+                lualine_a = {
+                    {
+                        "tabs",
+                        mode = 1,
+                        path = 0,
+                        use_mode_colors = true,
+                    }
+                },
             },
-            tabline = {},
             winbar = {},
             sections = {
                 lualine_a = {

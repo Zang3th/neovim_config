@@ -1,37 +1,86 @@
 local opts = { noremap = true, silent = true }
 
+-- Set CTRL + q for quitting windows
+vim.api.nvim_set_keymap("n", "<C-q>", ":q<CR>", opts)
+
+-- Set keys for switching between splits
+vim.api.nvim_set_keymap("n", "<C-h>", "<C-w>h", opts)
+vim.api.nvim_set_keymap("n", "<C-j>", "<C-w>j", opts)
+vim.api.nvim_set_keymap("n", "<C-k>", "<C-w>k", opts)
+vim.api.nvim_set_keymap("n", "<C-l>", "<C-w>l", opts)
+
+-- Stay in visual mode after indenting
+vim.api.nvim_set_keymap("v", "<", "<gv", opts)
+vim.api.nvim_set_keymap("v", ">", ">gv", opts)
+
+-- Stay in visual block mode after indenting
+vim.api.nvim_set_keymap("x", "<", "<gv", opts)
+vim.api.nvim_set_keymap("x", ">", ">gv", opts)
+
+-- Map 'ggVG' to CTRL + a
+vim.api.nvim_set_keymap("n", "<C-a>", "ggVG", opts)
+
+-- Keybindings for popup menus
+vim.api.nvim_set_keymap('c', '<Up>', 'pumvisible() ? "<C-p>" : "<Up>"', opts)
+vim.api.nvim_set_keymap('c', '<Down>', 'pumvisible() ? "<C-n>" : "<Down>"', opts)
+vim.api.nvim_set_keymap('c', '<Right>', 'pumvisible() ? "<C-y>" : "<Right>"', opts)
+
 -- Set keys for horizontal and vertical splitting
 vim.api.nvim_set_keymap("n", "<leader>sh", ":split<CR>", opts)
 vim.api.nvim_set_keymap("n", "<leader>sv", ":vsplit<CR>", opts)
 vim.api.nvim_set_keymap("n", "<leader>se", ":wincmd =<CR>", opts)
-
--- Set key to to toggle nvimtree
-vim.api.nvim_set_keymap("n", "<C-b>", ":NvimTreeToggle<CR>", opts)
-
--- Keybindings for neogit
-vim.api.nvim_set_keymap("n", "<leader>gg", ":Neogit<CR>", opts)
-vim.api.nvim_set_keymap("n", "<leader>fd", ":DiffviewOpen<CR>", opts)
-
--- Open lazy
-vim.api.nvim_set_keymap("n", "<leader>ll", ":Lazy<CR>", opts)
 
 -- Buffer control
 vim.api.nvim_set_keymap("n", "<leader>bl", ":bnext<CR>", opts)
 vim.api.nvim_set_keymap("n", "<leader>bh", ":bprevious<CR>", opts)
 
 -- Tab control
-vim.api.nvim_set_keymap("n", "<Leader>tt", ":tabnew<CR>", opts)
-vim.api.nvim_set_keymap("n", "<Leader>tl", ":tabnext<CR>", opts)
-vim.api.nvim_set_keymap("n", "<Leader>th", ":tabprevious<CR>", opts)
-vim.api.nvim_set_keymap("n", "<Leader>td", ":tabclose<CR>", opts)
+vim.api.nvim_set_keymap("n", "<leader>tt", ":tabnew<CR>", opts)
+vim.api.nvim_set_keymap("n", "<leader>tl", ":tabnext<CR>", opts)
+vim.api.nvim_set_keymap("n", "<leader>th", ":tabprevious<CR>", opts)
+vim.api.nvim_set_keymap("n", "<leader>td", ":tabclose<CR>", opts)
+
+-- Open lazy
+vim.api.nvim_set_keymap("n", "<leader>ll", ":Lazy<CR>", opts)
+
+-- Toggle nvimtree
+vim.api.nvim_set_keymap("n", "<C-b>", ":NvimTreeToggle<CR>", opts)
+
+-- Keybindings for neogit
+vim.api.nvim_set_keymap("n", "<leader>gg", ":Neogit<CR>", opts)
+
+-- Keybindings for diffview
+vim.api.nvim_set_keymap("n", "<leader>fd", ":DiffviewOpen<CR>", opts)
+
+function SetDiffviewKeymaps()
+    vim.api.nvim_buf_set_keymap(0, "n", "<C-q>", ":DiffviewClose<CR>", opts)
+end
+
+vim.cmd([[
+    augroup DiffviewKeymaps
+        autocmd!
+        autocmd FileType DiffviewFiles lua SetDiffviewKeymaps()
+    augroup END
+]])
 
 local M = {}
 
--- Keybinding for auto-session
-function M.auto_session_keymaps()
-    vim.keymap.set("n", "<leader>ls", require("auto-session.session-lens").search_session, {
-        noremap = true,
-    })
+-- Keybindings for comments
+function M.comment_keymaps()
+    local comment = require("Comment.api")
+    vim.keymap.set("n", "<leader>cc", comment.toggle.linewise.current, opts)
+    vim.keymap.set("n", "<leader>bc", comment.toggle.blockwise.current, opts)
+    vim.keymap.set("v", "<leader>cc", function()
+        comment.toggle.linewise(vim.fn.visualmode())
+    end, opts)
+    vim.keymap.set("v", "<leader>bc", function()
+        comment.toggle.blockwise(vim.fn.visualmode())
+    end, opts)
+end
+
+-- Keybinding for markdown-preview
+function M.markdown_preview_keymaps()
+    vim.api.nvim_set_keymap("n", "<C-m>", ":MarkdownPreviewToggle<CR>", opts)
 end
 
 -- Keybindings for telescope
@@ -42,61 +91,17 @@ function M.telescope_keymaps()
     vim.keymap.set("n", "<leader>ft", ":TodoTelescope<CR>", {})
 end
 
--- Keybindings for LSP
-function M.lsp_keymaps()
-    vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
-    vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
-    vim.keymap.set("n", "gD", vim.lsp.buf.declaration, {})
-    vim.keymap.set("n", "gi", vim.lsp.buf.implementation, {})
-    vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
-end
-
--- Keybinding for none-ls
-function M.none_ls_keymaps()
-    vim.keymap.set({"n", "v"}, "<C-f><C-f>", vim.lsp.buf.format, {})
-end
-
--- Keybindings for trouble
-function M.trouble_keymaps()
-    vim.api.nvim_set_keymap("n", "<leader>xx", ":Trouble diagnostics toggle<CR>", {})
-end
-
--- Keybinding for markdown-preview
-function M.markdown_preview_keymaps()
-    vim.api.nvim_set_keymap("n", "<C-m>", ":MarkdownPreviewToggle<CR>", {})
-end
-
 -- Keybindings for substitute
-function M.sub_keymaps()
+function M.substitute_keymaps()
     local substitute = require("substitute")
     vim.keymap.set("n", "s", substitute.operator, {})
     vim.keymap.set("n", "ss", substitute.line, {})
     vim.keymap.set("x", "s", substitute.visual, {})
 end
 
--- Function for setting diffview keymaps
-function SetDiffviewKeymaps()
-    vim.api.nvim_buf_set_keymap(0, "n", "<C-q>", ":DiffviewClose<CR>", opts)
-end
-
--- Auto command for setting diffview keymaps
-vim.cmd([[
-    augroup DiffviewKeymaps
-        autocmd!
-        autocmd FileType DiffviewFiles lua SetDiffviewKeymaps()
-    augroup END
-]])
-
--- Keybindings for dap
-function M.dap_keymaps()
-    local dap_ui = require("dapui")
-    vim.keymap.set("n", "<F3>", function() dap_ui.toggle({ reset = true }) end, {})
-    vim.keymap.set("n", "<F4>", ":DapTerminate<CR>", {})
-    vim.keymap.set("n", "<F5>", ":DapContinue<CR>", {})
-    vim.keymap.set("n", "<F6>", ":DapToggleBreakpoint<CR>", {})
-    vim.keymap.set("n", "<F10>", ":DapStepOver<CR>", {})
-    vim.keymap.set("n", "<F11>", ":DapStepInto<CR>", {})
-    vim.keymap.set("n", "<F12>", ":DapStepOut<CR>", {})
+-- Keybindings for trouble
+function M.trouble_keymaps()
+    vim.api.nvim_set_keymap("n", "<leader>xx", ":Trouble diagnostics toggle<CR>", {})
 end
 
 -- Keybindings for vimtex

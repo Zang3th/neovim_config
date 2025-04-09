@@ -6,7 +6,6 @@ return {
     },
     config = function()
         require("trouble").setup()
-        local keymap = require("keymaps")
-        keymap.trouble_keymaps()
+        require("keymaps").trouble_keymaps()
     end,
 }
