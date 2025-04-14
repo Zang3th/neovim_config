@@ -9,6 +9,7 @@ return {
     },
     config = function()
         require("noice").setup({
+            ---@diagnostic disable-next-line: undefined-field
             require("notify").setup({
                 timeout = 5000,
                 stages = "slide",

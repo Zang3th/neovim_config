@@ -3,14 +3,8 @@ return {
     build = ":TSUpdate",
     lazy = false,
     config = function()
+        ---@diagnostic disable: missing-fields
         require("nvim-treesitter.configs").setup({
-            enable = true,
-            disable = {
-                "latex",
-            },
-            ignore_install = {
-                "latex",
-            },
             ensure_installed = {
                 "bash",
                 "c",
