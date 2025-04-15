@@ -15,7 +15,6 @@ return {
                     -- Lua
                     "lua-language-server",
                     "luacheck",
-                    "stylua",
 
                     -- Markdown
                     "marksman",
@@ -25,10 +24,6 @@ return {
                     "clangd",
                     "clang-format",
                     "cmake-language-server",
-                    "cmakelint",
-
-                    -- LaTeX
-                    "texlab",
 
                     -- Other
                     "glsl_analyzer",

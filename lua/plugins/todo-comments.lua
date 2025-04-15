@@ -14,9 +14,9 @@ return {
                 NOTE = { icon = " ", color = "hint", alt = { "INFO" } },
                 WARN = { icon = " ", color = "warning", alt = { "WARNING", "XXX" } },
                 FIX = {
-                  icon = " ",
-                  color = "error",
-                  alt = { "FIXME", "BUG", "FIXIT", "ISSUE", "ERROR", "ERR" },
+                    icon = " ",
+                    color = "error",
+                    alt = { "FIXME", "BUG", "FIXIT", "ISSUE", "ERROR", "ERR" },
                 },
                 HACK = { icon = " ", color = "warning" },
                 PERF = { icon = " ", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },

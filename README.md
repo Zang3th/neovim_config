@@ -2,10 +2,11 @@
 
 ## General stuff
 
-- Just another neovim config
+- My personal Neovim config
 - Modular plugin integration
-- Covers all the basics like *lsp-integration*, *fuzzy-finding*, *git/diffview* ...
-- Color scheme is *gruvbox_dark*
+- Modern LSP setup (> Neovim v0.11)
+- Fuzzy-Finding, Git/Diffview, File-Explorer and much more ...
+- Color scheme is *Gruvbox_Dark*
 
 ## Great learning resources
 
@@ -15,5 +16,5 @@
 
 ## Appearance
 
-![Screenshot_004-1](res/Screenshot_004-1.png)
-![Screenshot_004-2](res/Screenshot_004-2.png)
+![Screenshot_004-1](res/Screenshot_005-1.png)
+![Screenshot_004-2](res/Screenshot_005-2.png)
