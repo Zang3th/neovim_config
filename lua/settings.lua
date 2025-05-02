@@ -69,3 +69,16 @@ opt.history = 200
 vim.filetype.add({
     pattern = { [".*/hypr/.*%.conf"] = "hyprlang" },
 })
+
+-- Configure diagnostic behaviour
+vim.diagnostic.config({
+    virtual_text = {
+        prefix = "●",
+        spacing = 2,
+    },
+    virtual_lines = false,
+    underline = true,
+    signs = true,
+    update_in_insert = false,
+    severity_sort = true,
+})

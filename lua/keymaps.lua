@@ -73,19 +73,6 @@ vim.keymap.set({ "n", "v" }, "<C-f><C-f>", vim.lsp.buf.format, opts)
 
 local M = {}
 
--- Keybindings for comments
-function M.comment_keymaps()
-    local comment = require("Comment.api")
-    vim.keymap.set("n", "<leader>cc", comment.toggle.linewise.current, opts)
-    vim.keymap.set("n", "<leader>bc", comment.toggle.blockwise.current, opts)
-    vim.keymap.set("v", "<leader>cc", function()
-        comment.toggle.linewise(vim.fn.visualmode())
-    end, opts)
-    vim.keymap.set("v", "<leader>bc", function()
-        comment.toggle.blockwise(vim.fn.visualmode())
-    end, opts)
-end
-
 -- Keybinding for markdown-preview
 function M.markdown_preview_keymaps()
     vim.api.nvim_set_keymap("n", "<C-m>", ":MarkdownPreviewToggle<CR>", opts)
