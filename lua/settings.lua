@@ -1,6 +1,15 @@
 local g = vim.g
+local o = vim.o
 local opt = vim.opt
 local opt_global = vim.opt_global
+
+-- Windows stuff
+o.shell = "pwsh.exe"
+o.shellcmdflag = "-command"
+o.shellquote = '"'
+o.shellxquote = '"'
+g.python3_host_prog = [[C:\Users\Zangeth\AppData\Local\Programs\Python\Python313\python.exe]]
+vim.env.PATH = ([[C:\Users\Zangeth\AppData\Local\Programs\Python\Python313;C:\Users\Zangeth\AppData\Local\Programs\Python\Python313\Scripts;]] .. vim.env.PATH)
 
 -- Deactivate specific providers
 g.loaded_node_provider = 0
@@ -9,7 +18,7 @@ g.loaded_perl_provider = 0
 -- General stuff
 g.mapleader = " "
 g.maplocalleader = " "
-vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
 
 -- Deactivate default file explorer
 g.loaded_netrw = 1
