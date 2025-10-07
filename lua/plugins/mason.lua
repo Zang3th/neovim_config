@@ -25,6 +25,9 @@ return {
                     "clang-format",
                     "cmake-language-server",
 
+                    -- Python
+                    "pyright",
+
                     -- Other
                     "glsl_analyzer",
                 },
