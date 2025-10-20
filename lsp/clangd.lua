@@ -1,13 +1,16 @@
 return {
     cmd = {
         "clangd",
+        "--background-index",
+        "--pch-storage=disk",
+        "-j=4",
         "--clang-tidy",
-        "-j=20",
         "--all-scopes-completion",
         "--function-arg-placeholders=0",
         "--completion-style=detailed",
         "--header-insertion=never",
         "--header-insertion-decorators",
+        "--limit-results=100",
         "--log=error",
         "--pretty",
     },
