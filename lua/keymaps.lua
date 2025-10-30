@@ -52,6 +52,12 @@ vim.api.nvim_set_keymap("n", "<leader>gg", ":Neogit<CR>", opts)
 -- Keybindings for diffview
 vim.api.nvim_set_keymap("n", "<leader>fd", ":DiffviewOpen<CR>", opts)
 
+-- Remap neovide pasting
+if vim.g.neovide then
+  vim.keymap.set("n", "<C-S-v>", '"+p', opts)
+  vim.keymap.set("i", "<C-S-v>", '<C-r>+', opts)
+end
+
 function SetDiffviewKeymaps()
     vim.api.nvim_buf_set_keymap(0, "n", "<C-q>", ":DiffviewClose<CR>", opts)
 end
