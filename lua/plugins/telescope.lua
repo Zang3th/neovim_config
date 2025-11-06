@@ -6,6 +6,12 @@ return {
             "nvim-lua/plenary.nvim",
             "nvim-tree/nvim-web-devicons",
             "folke/todo-comments.nvim",
+            {
+                "nvim-telescope/telescope-fzf-native.nvim",
+                build =
+                "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release -DCMAKE_POLICY_VERSION_MINIMUM=3.5 && cmake --build build --config Release",
+            },
+            "nvim-telescope/telescope-ui-select.nvim",
         },
         lazy = false,
         config = function()
@@ -38,6 +44,17 @@ return {
                             ["<C-q>"] = actions.close,
                         },
                     },
+                    extensions = {
+                        fzf = {
+                            fuzzy = true,
+                            override_generic_sorter = true,
+                            override_file_sorter = true,
+                            case_mode = "smart_case",
+                        },
+                        ["ui-select"] = {
+                            require("telescope.themes").get_dropdown({}),
+                        },
+                    }
                 },
                 pickers = {
                     find_files = {
@@ -45,18 +62,7 @@ return {
                     },
                 },
             })
-        end,
-    },
-    {
-        "nvim-telescope/telescope-ui-select.nvim",
-        config = function()
-            require("telescope").setup({
-                extensions = {
-                    ["ui-select"] = {
-                        require("telescope.themes").get_dropdown({}),
-                    },
-                },
-            })
+            require('telescope').load_extension('fzf')
             require("telescope").load_extension("ui-select")
         end,
     },
