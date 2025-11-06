@@ -8,7 +8,7 @@ return {
             terminal_colors = true,
             undercurl = true,
             underline = true,
-            bold = true,
+            bold = false,
             italic = {
                 strings = true,
                 emphasis = true,

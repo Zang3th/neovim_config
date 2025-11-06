@@ -26,10 +26,12 @@ return {
                         "--line-number",
                         "--column",
                         "--smart-case",
-                        "--hidden",
-                        "--glob",
+                        -- "--hidden",
+                        "--glob", "*.cpp",
+                        "--glob", "*.hpp",
+                        "--glob", "*.h",
+                        "--glob", "!.git/*",
                         "--trim",
-                        "!.git/",
                     },
                     mappings = {
                         i = {
