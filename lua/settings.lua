@@ -8,8 +8,6 @@ o.shell = "pwsh.exe"
 o.shellcmdflag = "-command"
 o.shellquote = '"'
 o.shellxquote = '"'
-g.python3_host_prog = [[C:\Users\Zangeth\AppData\Local\Programs\Python\Python313\python.exe]]
-vim.env.PATH = ([[C:\Users\Zangeth\AppData\Local\Programs\Python\Python313;C:\Users\Zangeth\AppData\Local\Programs\Python\Python313\Scripts;]] .. vim.env.PATH)
 
 -- Deactivate specific providers
 g.loaded_node_provider = 0
