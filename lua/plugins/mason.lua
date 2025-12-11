@@ -23,10 +23,14 @@ return {
                     -- C/C++
                     "clangd",
                     "clang-format",
+
+                    -- CMake
                     "cmake-language-server",
+                    "gersemi",
 
                     -- Python
                     "pyright",
+                    "black",
 
                     -- Other
                     "glsl_analyzer",

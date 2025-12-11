@@ -20,8 +20,8 @@ return {
                 lualine_a = {
                     {
                         "tabs",
-                        tab_max_length = 40,
-                        max_length = vim.o.columns * 2 / 3,
+                        tab_max_length = 20,
+                        max_length = vim.o.columns,
                         mode = 1,
                         path = 0,
                         use_mode_colors = true,

@@ -63,6 +63,8 @@ return {
             sources = {
                 markdownlint,
                 luacheck,
+                null_ls.builtins.formatting.black,
+                null_ls.builtins.formatting.gersemi,
             },
         })
     end,

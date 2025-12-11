@@ -7,7 +7,7 @@ return {
     },
     settings = {
         cmake = {
-            buildDirectory = "build",
+            buildDirectory = "Build",
         },
     },
 }
