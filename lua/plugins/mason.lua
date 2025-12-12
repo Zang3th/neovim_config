@@ -24,10 +24,6 @@ return {
                     "clangd",
                     "clang-format",
 
-                    -- CMake
-                    "cmake-language-server",
-                    "gersemi",
-
                     -- Python
                     "pyright",
                     "black",

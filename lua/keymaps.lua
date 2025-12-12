@@ -46,28 +46,11 @@ vim.api.nvim_set_keymap("n", "<leader>ll", ":Lazy<CR>", opts)
 -- Toggle nvimtree
 vim.api.nvim_set_keymap("n", "<C-b>", ":NvimTreeToggle<CR>", opts)
 
--- Keybindings for neogit
-vim.api.nvim_set_keymap("n", "<leader>gg", ":Neogit<CR>", opts)
-
--- Keybindings for diffview
-vim.api.nvim_set_keymap("n", "<leader>fd", ":DiffviewOpen<CR>", opts)
-
 -- Remap neovide pasting
 if vim.g.neovide then
   vim.keymap.set("n", "<C-S-v>", '"+p', opts)
   vim.keymap.set("i", "<C-S-v>", '<C-r>+', opts)
 end
-
-function SetDiffviewKeymaps()
-    vim.api.nvim_buf_set_keymap(0, "n", "<C-q>", ":DiffviewClose<CR>", opts)
-end
-
-vim.cmd([[
-    augroup DiffviewKeymaps
-        autocmd!
-        autocmd FileType DiffviewFiles lua SetDiffviewKeymaps()
-    augroup END
-]])
 
 -- Keybindings for LSP
 vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
