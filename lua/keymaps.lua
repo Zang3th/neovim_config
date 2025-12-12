@@ -62,11 +62,6 @@ vim.keymap.set({ "n", "v" }, "<C-f><C-f>", vim.lsp.buf.format, opts)
 
 local M = {}
 
--- Keybinding for markdown-preview
-function M.markdown_preview_keymaps()
-    vim.api.nvim_set_keymap("n", "<C-m>", ":MarkdownPreviewToggle<CR>", opts)
-end
-
 -- Keybindings for telescope
 function M.telescope_keymaps()
     local builtin = require("telescope.builtin")
