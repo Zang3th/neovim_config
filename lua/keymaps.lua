@@ -52,6 +52,9 @@ if vim.g.neovide then
   vim.keymap.set("i", "<C-S-v>", '<C-r>+', opts)
 end
 
+-- Add normal pasting to the command line
+vim.keymap.set("c", "<C-v>", "<C-r>+")
+
 -- Keybindings for LSP
 vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
 vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
