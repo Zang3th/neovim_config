@@ -14,11 +14,9 @@ return {
                 ensure_installed = {
                     -- Lua
                     "lua-language-server",
-                    "luacheck",
 
                     -- Markdown
                     "marksman",
-                    "markdownlint",
 
                     -- C/C++
                     "clangd",
@@ -26,7 +24,6 @@ return {
 
                     -- Python
                     "pyright",
-                    "black",
 
                     -- Other
                     "glsl_analyzer",
