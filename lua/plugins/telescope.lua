@@ -31,6 +31,7 @@ return {
                         "--glob", "*.hpp",
                         "--glob", "*.h",
                         "--glob", "!.git/*",
+                        "--glob", "!Build/*",
                         "--trim",
                     },
                     mappings = {
@@ -57,7 +58,7 @@ return {
                 },
                 pickers = {
                     find_files = {
-                        find_command = { "rg", "--files", "--hidden", "--glob", "!.git/" },
+                        find_command = { "rg", "--files", "--hidden", "--glob", "!.git/", "!Build/" },
                     },
                 },
             })

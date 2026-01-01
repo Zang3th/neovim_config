@@ -7,6 +7,11 @@ return {
     },
     config = function()
         require("nvim-tree").setup({
+            filters = {
+                custom = {
+                    "^Build$",
+                },
+            },
             hijack_cursor = true,
             auto_reload_on_write = true,
             update_cwd = true,
