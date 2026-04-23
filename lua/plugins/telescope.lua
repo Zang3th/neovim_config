@@ -58,8 +58,11 @@ return {
                 },
                 pickers = {
                     find_files = {
-                        find_command = { "rg", "--files", "--hidden", "--glob", "!.git/", "--glob", "!Build/*" },
+                        find_command = { "rg", "--files", "--hidden", "--glob", "!.git/", "--glob", "!Build/*", "!out/*", "dicadkernel" },
                     },
+                },
+                live_grep = {
+                    search_dires = { "dicadkernel "},
                 },
             })
             require('telescope').load_extension('fzf')

@@ -10,6 +10,7 @@ return {
             filters = {
                 custom = {
                     "^Build$",
+                    "^out$",
                 },
             },
             hijack_cursor = true,
