@@ -20,7 +20,7 @@ return {
                 lualine_a = {
                     {
                         "tabs",
-                        tab_max_length = 20,
+                        tab_max_length = 30,
                         max_length = vim.o.columns,
                         mode = 1,
                         path = 0,
@@ -30,13 +30,7 @@ return {
             },
             winbar = {},
             sections = {
-                lualine_a = {
-                    {
-                        "mode",
-                        mode = 2,
-                        path = 1,
-                    },
-                },
+                lualine_a = { "mode"},
                 lualine_b = { "branch" },
                 lualine_c = { "diff" },
                 lualine_x = { "diagnostics" },
