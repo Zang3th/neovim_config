@@ -96,4 +96,12 @@ function M.vimtex_keymaps()
     vim.keymap.set("n", "csc", "<Plug>(vimtex-cmd-change)", {})
 end
 
+-- Keybindings for auto-session
+function M.auto_session_keymaps()
+    vim.keymap.set("n", "<leader>ss", "<cmd>AutoSession search<CR>", { desc = "Session search" })
+    vim.keymap.set("n", "<leader>sw", "<cmd>AutoSession save<CR>", { desc = "Save session" })
+    vim.keymap.set("n", "<leader>sr", "<cmd>AutoSession restore<CR>", { desc = "Restore session" })
+    vim.keymap.set("n", "<leader>sd", "<cmd>AutoSession delete<CR>", { desc = "Delete session" })
+end
+
 return M
