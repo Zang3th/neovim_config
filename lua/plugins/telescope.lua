@@ -26,12 +26,17 @@ return {
                         "--line-number",
                         "--column",
                         "--smart-case",
-                        -- "--hidden",
+                        "--hidden",
                         "--glob", "*.cpp",
                         "--glob", "*.hpp",
                         "--glob", "*.h",
+                        "--glob", "*.glsl",
+                        "--glob", "*.vert",
+                        "--glob", "*.frag",
+                        "--glob", "*.geom",
                         "--glob", "!.git/*",
                         "--glob", "!Build/*",
+                        "--glob", "!out/*",
                         "--trim",
                     },
                     mappings = {
@@ -58,11 +63,11 @@ return {
                 },
                 pickers = {
                     find_files = {
-                        find_command = { "rg", "--files", "--hidden", "--glob", "!.git/", "--glob", "!Build/*", "!out/*", "dicadkernel" },
+                        find_command = { "rg", "--files", "--hidden", "--glob", "!.git/*", "--glob", "!Build/*", "--glob", "!out/*", "dicadkernel", "data" },
                     },
-                },
-                live_grep = {
-                    search_dires = { "dicadkernel "},
+                    live_grep = {
+                        search_dirs = { "dicadkernel", "data" },
+                    },
                 },
             })
             require('telescope').load_extension('fzf')
