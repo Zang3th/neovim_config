@@ -64,6 +64,31 @@ vim.keymap.set("n", "ga", vim.lsp.buf.code_action, opts)
 vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
 vim.keymap.set({ "n", "v" }, "<C-f><C-f>", vim.lsp.buf.format, opts)
 
+-- C/C++ declaration to body
+vim.keymap.set("n", "<tab>", function()
+    local row = vim.api.nvim_win_get_cursor(0)[1]
+    local line = vim.api.nvim_get_current_line()
+
+    -- Preserve the current line indentation
+    local indent = line:match("^%s*") or ""
+    local body_indent = indent .. "    "
+
+    -- Remove a trailing semicolon from the declaration
+    line = line:gsub("%s*;%s*$", "")
+    vim.api.nvim_set_current_line(line)
+
+    -- Insert the function body below the declaration
+    vim.fn.append(row, {
+        indent .. "{",
+        body_indent,
+        indent .. "}",
+    })
+
+    -- Place the cursor inside the body and enter insert mode
+    vim.api.nvim_win_set_cursor(0, { row + 2, #body_indent })
+    vim.cmd("startinsert!")
+end, { desc = "Convert declaration to function body" })
+
 local M = {}
 
 -- Keybindings for telescope
