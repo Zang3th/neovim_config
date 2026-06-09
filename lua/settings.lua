@@ -74,7 +74,17 @@ opt.history = 200
 
 -- Add specific file types
 vim.filetype.add({
-    pattern = { [".*/hypr/.*%.conf"] = "hyprlang" },
+    extension = {
+        vert = "glsl",
+        frag = "glsl",
+        geom = "glsl",
+        comp = "glsl",
+        tesc = "glsl",
+        tese = "glsl",
+    },
+    pattern = {
+        [".*/hypr/.*%.conf"] = "hyprlang",
+    },
 })
 
 -- Configure diagnostic behaviour
