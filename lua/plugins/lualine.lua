@@ -21,7 +21,9 @@ return {
                     {
                         "tabs",
                         tab_max_length = 30,
-                        max_length = vim.o.columns,
+                        max_length = function()
+                            return vim.o.columns
+                        end,
                         mode = 1,
                         path = 0,
                         use_mode_colors = true,
@@ -30,7 +32,7 @@ return {
             },
             winbar = {},
             sections = {
-                lualine_a = { "mode"},
+                lualine_a = { "mode" },
                 lualine_b = { "branch" },
                 lualine_c = { "diff" },
                 lualine_x = { "diagnostics" },
