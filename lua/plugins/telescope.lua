@@ -1,7 +1,7 @@
 return {
     {
         "nvim-telescope/telescope.nvim",
-        tag = "v0.2.0",
+        tag = "v0.2.1",
         dependencies = {
             "nvim-lua/plenary.nvim",
             "nvim-tree/nvim-web-devicons",
@@ -28,8 +28,12 @@ return {
                         "--smart-case",
                         "--hidden",
                         "--glob", "*.cpp",
+                        "--glob", "*.cxx",
+                        "--glob", "*.c",
                         "--glob", "*.hpp",
                         "--glob", "*.h",
+                        "--glob", "*.lua",
+                        "--glob", "*.py",
                         "--glob", "*.glsl",
                         "--glob", "*.vert",
                         "--glob", "*.frag",
