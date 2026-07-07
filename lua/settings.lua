@@ -3,11 +3,13 @@ local o = vim.o
 local opt = vim.opt
 local opt_global = vim.opt_global
 
--- Windows stuff
-o.shell = "pwsh.exe"
-o.shellcmdflag = "-command"
-o.shellquote = '"'
-o.shellxquote = '"'
+-- Windows shell setup
+if vim.fn.has("win32") == 1 then
+    o.shell = "pwsh.exe"
+    o.shellcmdflag = "-command"
+    o.shellquote = '"'
+    o.shellxquote = '"'
+end
 
 -- Deactivate specific providers
 g.loaded_node_provider = 0
