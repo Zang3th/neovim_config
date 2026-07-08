@@ -3,6 +3,9 @@ local opts = { noremap = true, silent = true }
 -- Set CTRL + q for quitting windows
 vim.api.nvim_set_keymap("n", "<C-q>", ":q<CR>", opts)
 
+-- Set CTRL + Space to open terminal
+vim.api.nvim_set_keymap("n", "<C-Space>", ":terminal<CR>", opts)
+
 -- Set keys for switching between splits
 vim.api.nvim_set_keymap("n", "<C-h>", "<C-w>h", opts)
 vim.api.nvim_set_keymap("n", "<C-j>", "<C-w>j", opts)
