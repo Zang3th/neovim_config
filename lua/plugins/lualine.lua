@@ -15,7 +15,7 @@ return {
                     statusline = 100,
                 },
             },
-            extensions = { "nvim-tree", "lazy", "mason", "trouble" },
+            extensions = { "lazy", "mason", "trouble" },
             tabline = {
                 lualine_a = {
                     {
