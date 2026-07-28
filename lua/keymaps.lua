@@ -52,8 +52,14 @@ vim.api.nvim_set_keymap("n", "<leader>td", ":tabclose<CR>", opts)
 -- Open lazy
 vim.api.nvim_set_keymap("n", "<leader>ll", ":Lazy<CR>", opts)
 
--- Toggle nvimtree
-vim.api.nvim_set_keymap("n", "<C-b>", ":NvimTreeToggle<CR>", opts)
+-- Toggle mini.files
+vim.keymap.set("n", "<C-e>", function()
+    local MiniFiles = require("mini.files")
+    if not MiniFiles.close() then
+        local path = vim.api.nvim_buf_get_name(0)
+        MiniFiles.open(path ~= "" and path or vim.fn.getcwd())
+    end
+end, { desc = "Toggle file explorer" })
 
 -- Remap neovide pasting
 if vim.g.neovide then
