@@ -144,4 +144,10 @@ function M.auto_session_keymaps()
     vim.keymap.set("n", "<leader>sd", "<cmd>AutoSession delete<CR>", { desc = "Delete session" })
 end
 
+-- Keybindings for diffview
+function M.diffview_keymaps()
+    vim.keymap.set("n", "<leader>fd", "<cmd>DiffviewOpen<CR>", { desc = "Diff changed files" })
+    vim.keymap.set("n", "<leader>fh", "<cmd>DiffviewFileHistory %<CR>", { desc = "File history" })
+end
+
 return M
