@@ -136,6 +136,11 @@ function M.vimtex_keymaps()
     vim.keymap.set("n", "csc", "<Plug>(vimtex-cmd-change)", {})
 end
 
+-- Keybindings for markdown-preview
+function M.markdown_preview_keymaps()
+    vim.keymap.set("n", "<C-m><C-m>", ":MarkdownPreviewToggle<CR>", {})
+end
+
 -- Keybindings for auto-session
 function M.auto_session_keymaps()
     vim.keymap.set("n", "<leader>ss", "<cmd>AutoSession search<CR>", { desc = "Session search" })
