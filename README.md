@@ -5,7 +5,7 @@ My personal Neovim configuration with opinionated defaults and keymaps, focused 
 ## General stuff
 
 - Small, modular plugin setup powered by `lazy.nvim`
-- Native Neovim 0.11+ LSP setup for C/C++, Lua, Markdown, Python, and more ...
+- Native Neovim 0.11+ LSP setup for C/C++, Lua, Markdown, Python, HTML, CSS, JavaScript, and more ...
 - Automated language-server and formatter installation through `Mason`
 - Tree-sitter highlighting, `nvim-cmp` completion, snippets, and diagnostics
 - Fuzzy finding with `Telescope` and native `FZF` sorting

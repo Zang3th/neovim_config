@@ -1,1 +1,10 @@
-vim.lsp.enable({ "clangd", "lua_ls", "marksman", "glsl_analyzer", "pyright" })
+vim.lsp.enable({
+    "clangd",
+    "cssls",
+    "glsl_analyzer",
+    "html",
+    "lua_ls",
+    "marksman",
+    "pyright",
+    "ts_ls",
+})

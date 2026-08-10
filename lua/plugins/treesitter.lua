@@ -8,7 +8,7 @@ return {
 
         local install_dir = vim.fn.stdpath("data") .. "/site"
         vim.opt.runtimepath:prepend(install_dir)
-        ts.setup({install_dir = install_dir})
+        ts.setup({ install_dir = install_dir })
 
         local languages = {
             "bash",
@@ -19,6 +19,8 @@ return {
             "glsl",
             "html",
             "hyprlang",
+            "javascript",
+            "jsdoc",
             "lua",
             "luadoc",
             "markdown",

@@ -25,6 +25,11 @@ return {
                     -- Python
                     "pyright",
 
+                    -- Web
+                    "css-lsp",
+                    "html-lsp",
+                    "typescript-language-server",
+
                     -- Other
                     "glsl_analyzer",
                 },
