@@ -17,6 +17,7 @@ return {
             "hrsh7th/cmp-buffer",
             "hrsh7th/cmp-path",
             "hrsh7th/cmp-cmdline",
+            "hrsh7th/cmp-omni",
             "hrsh7th/cmp-vsnip",
             "hrsh7th/vim-vsnip",
         },
@@ -61,6 +62,7 @@ return {
                 }),
                 sources = cmp.config.sources({
                     { name = "nvim_lsp" },
+                    { name = "omni" },
                     { name = "vsnip" },
                 }, {
                     { name = "buffer" },

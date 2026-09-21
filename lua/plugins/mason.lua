@@ -18,6 +18,9 @@ return {
                     -- Markdown
                     "marksman",
 
+                    -- LaTeX
+                    "texlab",
+
                     -- C/C++
                     "clangd",
                     "clang-format",
