@@ -15,6 +15,6 @@ return {
         "--pretty",
     },
     filetypes = { "c", "cpp" },
-    root_markers = { "compile_commands.json", "CMakeLists.txt", ".git" },
+    root_markers = { ".clangd", ".git", "compile_commands.json" },
     capabilities = require("cmp_nvim_lsp").default_capabilities(),
 }
