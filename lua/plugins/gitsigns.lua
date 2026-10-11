@@ -3,10 +3,7 @@ return {
     opts = {
         current_line_blame = false,
         on_attach = function(bufnr)
-            local gs = package.loaded.gitsigns
-            vim.keymap.set("n", "<leader>gb", function()
-              gs.blame_line({ full = true })
-            end, { buffer = bufnr })
+            require("keymaps").gitsigns_keymaps(bufnr)
         end,
     },
 }

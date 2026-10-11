@@ -2,7 +2,6 @@ return {
     "ellisonleao/gruvbox.nvim",
     lazy = false,
     priority = 999,
-    opts = ...,
     config = function()
         local gruvbox = require("gruvbox")
         local colors = gruvbox.palette

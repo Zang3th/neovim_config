@@ -5,10 +5,18 @@ local opt_global = vim.opt_global
 
 -- Windows shell setup
 if vim.fn.has("win32") == 1 then
-    o.shell = "pwsh.exe"
-    o.shellcmdflag = "-command"
-    o.shellquote = '"'
-    o.shellxquote = '"'
+    local pwsh = vim.fn.executable("pwsh") == 1
+    o.shell = pwsh and "pwsh" or "powershell"
+    o.shellcmdflag = "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command "
+        .. "[Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.UTF8Encoding]::new();"
+        .. "$PSDefaultParameterValues['Out-File:Encoding']='utf8';"
+    if pwsh then
+        o.shellcmdflag = o.shellcmdflag .. "$PSStyle.OutputRendering='PlainText';"
+    end
+    o.shellpipe = "> %s 2>&1"
+    o.shellquote = ""
+    o.shellxquote = ""
+    o.shelltemp = false
 end
 
 -- Deactivate specific providers
@@ -25,10 +33,8 @@ g.loaded_netrw = 1
 g.loaded_netrwPlugin = 1
 
 -- UI
-g.have_nerd_font = true
 opt.termguicolors = true
 opt.background = "dark"
-opt.lazyredraw = false
 opt.fillchars:append({
     eob = " ",
 })
@@ -44,14 +50,12 @@ opt.tabstop = 4
 opt.shiftwidth = 4
 opt.softtabstop = 4
 opt.expandtab = true
-opt.autoindent = true
 opt.smartindent = true
 opt.cindent = true
 
 -- Editor settings
 opt.number = true
 opt.showmode = false
-opt.backspace = "indent,eol,start"
 opt.clipboard = "unnamedplus"
 opt.ignorecase = true
 opt.smartcase = true
@@ -70,9 +74,7 @@ opt.listchars = {
 opt.list = true
 
 -- Command line mode
-opt.wildmenu = true
 opt.wildmode = "full"
-opt.history = 200
 
 -- Add specific file types
 vim.filetype.add({

@@ -2,12 +2,10 @@ return {
     "folke/todo-comments.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
     lazy = false,
-    opts = {
-        signs = false,
-    },
     config = function()
         require("todo-comments").setup({
             -- The default config is pretty complete already, just some little tweaks
+            signs = false,
             keywords = {
                 TODO = { icon = " ", color = "info" },
                 DONE = { icon = " ", color = "done" },

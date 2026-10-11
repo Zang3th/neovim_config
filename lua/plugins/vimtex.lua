@@ -33,7 +33,7 @@ return {
             xelatex = '-xelatex',
         }
         vim.g.vimtex_compiler_latexmk = {
-            build_dir = '',
+            out_dir = '',
             options = {
                 '-shell-escape',
                 '-verbose',

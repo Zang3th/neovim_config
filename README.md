@@ -16,7 +16,7 @@ My personal Neovim configuration with opinionated defaults and keymaps, focused 
 ## Great learning resources
 
 - [TJ DeVries](https://www.youtube.com/@teej_dv)
-- [Primegean](https://www.youtube.com/@ThePrimeTimeagen)
+- [Primeagen](https://www.youtube.com/@ThePrimeTimeagen)
 - [Typecraft](https://www.youtube.com/@typecraft_dev)
 
 ## Appearance
