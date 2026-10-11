@@ -119,11 +119,23 @@ end, "Convert declaration to function body")
 
 local M = {}
 
+-- Restrict searches to these folders when they exist in the cwd
+local function search_dirs()
+    local dirs = vim.tbl_filter(function(dir)
+        return vim.fn.isdirectory(dir) == 1
+    end, { "dicadkernel", "data" })
+    return #dirs > 0 and dirs or nil
+end
+
 -- Keybindings for telescope
 function M.telescope_keymaps()
     local builtin = require("telescope.builtin")
-    map("n", "<leader>ff", builtin.find_files, "Find files")
-    map("n", "<leader>fg", builtin.live_grep, "Live grep")
+    map("n", "<leader>ff", function()
+        builtin.find_files({ search_dirs = search_dirs() })
+    end, "Find files")
+    map("n", "<leader>fg", function()
+        builtin.live_grep({ search_dirs = search_dirs() })
+    end, "Live grep")
     map("n", "<leader>ft", "<cmd>TodoTelescope<CR>", "Find todos")
 end
 

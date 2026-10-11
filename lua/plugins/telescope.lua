@@ -69,6 +69,7 @@ return {
                         "--glob", "*.tese",
                         "--glob", "!.git/*",
                         "--glob", "!Build/*",
+                        "--glob", "!out/*",
                         "--trim",
                     },
                     mappings = {
@@ -95,7 +96,7 @@ return {
                 },
                 pickers = {
                     find_files = {
-                        find_command = { "rg", "--files", "--hidden", "--glob", "!.git/", "--glob", "!Build/*" },
+                        find_command = { "rg", "--files", "--hidden", "--glob", "!.git/", "--glob", "!Build/*", "--glob", "!out/*" },
                     },
                 },
             })
